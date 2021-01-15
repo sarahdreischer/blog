@@ -1,5 +1,5 @@
-import { getAllSortedPosts, getPostById } from '../../lib/posts';
-import { BlogPostPage } from '../../containers/blog-post';
+import { getAllSortedPosts, getPostById } from "../../lib/api/posts";
+import { BlogPostPage } from "../../containers/blog-post";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();

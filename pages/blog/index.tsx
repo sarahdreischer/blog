@@ -1,5 +1,5 @@
-import { getAllSortedPosts } from '../../lib/posts';
-import { BlogPage } from '../../containers/blog';
+import { getAllSortedPosts } from "../../lib/api/posts";
+import { BlogPage } from "../../containers/blog";
 
 export const getStaticProps = async () => {
   const posts = getAllSortedPosts();
