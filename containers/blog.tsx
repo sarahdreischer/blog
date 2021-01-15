@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button, Row, Col, Container, Card } from "react-bootstrap";
-import { BodyWrapper } from "../components/layout/body-wrapper";
+import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 
 interface BlogPageProps {

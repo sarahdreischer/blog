@@ -1,8 +1,7 @@
 import { Divider } from "@material-ui/core";
-// import { Post, Section } from '@software-with-sarah/api-interfaces';
-import { Featured } from "../components/featured/featured";
-import { BodyWrapper } from "../components/layout/body-wrapper";
-import { SummarizedPosts } from "../components/posts/summarized";
+import { Featured } from "./components/featured/featured";
+import { BodyWrapper } from "./components/layout/body-wrapper";
+import { SummarizedPosts } from "./components/posts/summarized";
 
 interface HomepageProps {
   featuredSections: Array<any>;

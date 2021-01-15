@@ -1,5 +1,6 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
-import { BodyWrapper } from "../components/layout/body-wrapper";
+import { Col, Container, Row } from "react-bootstrap";
+import { BodyWrapper } from "./components/layout/body-wrapper";
+import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AboutPageProps {}
@@ -11,7 +12,7 @@ export const AboutPage = (props: AboutPageProps) => {
         <Container>
           <Row>
             <Col lg={4} className="pt-4">
-              <Image thumbnail className="w-100" src={"/profile.jpeg"} />
+              <Image width={500} height={580} src={"/profile.jpeg"} priority />
             </Col>
             <Col lg={8}>
               <h1 className="py-3">About Me</h1>

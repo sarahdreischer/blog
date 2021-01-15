@@ -1,9 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
-import { AppToolbar, AppContainer } from "../components/layout/default-layout";
+import {
+  AppToolbar,
+  AppContainer,
+} from "../containers/components/layout/default-layout";
 import { Divider } from "@material-ui/core";
-import { BlogNavbar, Page } from "../components/layout/navbar";
+import { BlogNavbar, Page } from "../containers/components/layout/navbar";
 import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
 

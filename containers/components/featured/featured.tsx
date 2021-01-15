@@ -1,6 +1,6 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import styles from "./feature.module.css";
-import { FeaturedSection } from "../../lib/types/featured-section";
+import { FeaturedSection } from "../../../lib/types/featured-section";
 
 interface FeaturedProps {
   sections: FeaturedSection[];
