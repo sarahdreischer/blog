@@ -1,0 +1,44 @@
+import { Col, Container, Image, Row } from "react-bootstrap";
+import { BodyWrapper } from "../components/layout/body-wrapper";
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface AboutPageProps {}
+
+export const AboutPage = (props: AboutPageProps) => {
+  return (
+    <BodyWrapper
+      main={
+        <Container>
+          <Row>
+            <Col lg={4} className="pt-4">
+              <Image thumbnail className="w-100" src={"/profile.jpeg"} />
+            </Col>
+            <Col lg={8}>
+              <h1 className="py-3">About Me</h1>
+              <p className="text-justify">
+                Hi - thank you very much for visiting my blog! I'm Sarah
+                Dreischer, a 24 year old Software Engineer living and working in
+                London, UK. I graduated with an Electrical and Electronics
+                Engineering degree from University College London in 2018 and
+                have since then worked as an Electrical Engineer and Software
+                Engineer. Through work and personal projects I was able to dip
+                my toes into Java SpringBoot, Kubernetes, Cloud, DevOps,
+                Angular, React and NodeJS.
+                <br />
+                <br />
+                This blog was coded from scratch using React for the front-end
+                and NodeJs for the backend. The majority of the blog services
+                are hosted on Kubernetes in the Cloud. If you have any questions
+                on how I put this blog together which I haven't covered in a
+                blog post - feel free to reach out to me.
+                <br />
+                <br />
+                <b>Email:</b> softwarewithsarah@gmail.com
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      }
+    />
+  );
+};
