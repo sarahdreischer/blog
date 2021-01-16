@@ -10,14 +10,14 @@ interface HomepageProps {
   featuredSections: Array<any>;
   posts: Array<any>;
   activePage: number;
-  maxNumberOfPages: number;
+  numberOfPages: number;
 }
 
 export const Homepage = ({
   featuredSections,
   posts,
   activePage,
-  maxNumberOfPages,
+  numberOfPages: maxNumberOfPages,
 }: HomepageProps) => {
   return (
     <BodyWrapper

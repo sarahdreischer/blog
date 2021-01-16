@@ -16,6 +16,11 @@ export const getPostsInRange = (start: number, end: number) => {
   return getAllPosts().slice(start, end);
 };
 
+export const getNumberOfPostPages = (numPerPage: number) => {
+  const posts = getAllPosts();
+  return Math.ceil(posts.length / numPerPage);
+};
+
 const getAllPosts = () => {
   const directory = path.join(process.cwd(), "posts");
   const fileNames = fs.readdirSync(directory);
