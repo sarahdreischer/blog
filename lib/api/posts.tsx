@@ -34,7 +34,7 @@ const getAllPosts = () => {
     return {
       id,
       title: data.title,
-      createdAt: data.createdAt,
+      createdAt: new Date(data.createdAt),
       imageUrl: data.imageUrl,
       summary: data.summary,
       content: content,

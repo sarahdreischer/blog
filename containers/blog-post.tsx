@@ -29,7 +29,8 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
       sidebar={
         //TODO add small image of me here
         <span className="pt-5">
-          Written by Sarah Dreischer, Software Engineer from London, UK.
+          Published by Sarah Dreischer, Software Engineer from London, UK on{" "}
+          {new Date(post.createdAt).toDateString()}.
         </span>
       }
     />
