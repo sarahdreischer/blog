@@ -21,3 +21,8 @@ body {
 a.page-link {
   color: #000;
 }
+
+.coming-soon {
+  margin-top: 40vh;
+  margin-bottom: 40vh;
+}

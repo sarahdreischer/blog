@@ -21,14 +21,13 @@ export const BlogNavbar = ({ pages }: BlogNavbarProps) => {
   };
 
   return (
-    <Navbar
-      className="justify-content-center w-100"
-      expand="lg"
-      variant="light"
-    >
-      <Nav className="justify-content-between w-75 mx-5">
-        {pages.map((page) => getNavbarItem(page))}
-      </Nav>
+    <Navbar className="w-100" expand="md" variant="light">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+        <Nav className="justify-content-between w-75 mx-5">
+          {pages.map((page) => getNavbarItem(page))}
+        </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 };
