@@ -10,14 +10,15 @@ interface HomepageProps {
   featuredSections: Array<any>;
   posts: Array<any>;
   activePage: number;
+  maxNumberOfPages: number;
 }
 
 export const Homepage = ({
   featuredSections,
   posts,
   activePage,
+  maxNumberOfPages,
 }: HomepageProps) => {
-  console.log("Current Page is: " + activePage);
   return (
     <BodyWrapper
       main={
@@ -26,10 +27,24 @@ export const Homepage = ({
           <Divider />
           <SummarizedPosts posts={posts} />
           <Row className="float-right">
-            <DefaultPagination activePage={activePage} maxNumber={5} />
-            <Button size="small" variant="outlined" className="ml-2">
-              Next
-            </Button>
+            <div>
+              <DefaultPagination
+                activePage={activePage}
+                maxNumber={maxNumberOfPages}
+                visibleRange={5}
+              />
+            </div>
+            <div className="pl-2">
+              <Link as={`/page/${activePage + 1}`} href="/page/[page]">
+                <Button
+                  size="small"
+                  variant="outlined"
+                  disabled={activePage >= maxNumberOfPages}
+                >
+                  Next
+                </Button>
+              </Link>
+            </div>
           </Row>
         </>
       }

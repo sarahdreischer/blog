@@ -31,6 +31,7 @@ const Main = ({ posts }) => {
       activePage={1}
       featuredSections={featuredSections}
       posts={posts}
+      maxNumberOfPages={2}
     />
   );
 };
