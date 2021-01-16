@@ -1,6 +1,7 @@
 import { getAllSortedPosts, getPostById } from "../../lib/api/posts";
 import { BlogPostPage } from "../../containers/blog-post";
 import renderToString from "next-mdx-remote/render-to-string";
+import PostComponents from "containers/components/posts/post-components";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -13,7 +14,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const post = getPostById(params.id);
-  const mdxContent = await renderToString(post.content);
+  const mdxContent = await renderToString(post.content, {
+    components: PostComponents,
+  });
   return {
     props: {
       post: { ...post, content: mdxContent },

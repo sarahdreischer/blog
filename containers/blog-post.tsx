@@ -2,13 +2,14 @@ import { Container, Image } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
+import PostComponents from "./components/posts/post-components";
 
 interface BlogPostPageProps {
   post: Post;
 }
 
 export const BlogPostPage = ({ post }: BlogPostPageProps) => {
-  const content = hydrate(post.content);
+  const content = hydrate(post.content, { components: PostComponents });
 
   return (
     <BodyWrapper
