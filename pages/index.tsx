@@ -1,13 +1,11 @@
-import { getAllSortedPosts } from "../lib/api/posts";
+import { getPostsInRange } from "../lib/api/posts";
 import { Homepage } from "../containers/home";
 import { FeaturedSection } from "lib/types/featured-section";
 
 export const getStaticProps = async () => {
-  const posts = getAllSortedPosts();
-
   return {
     props: {
-      posts: posts.slice(0, 3),
+      posts: getPostsInRange(0, 3),
     },
   };
 };
@@ -27,8 +25,14 @@ const featuredSections: FeaturedSection[] = [
   },
 ];
 
-const Home = ({ posts }) => {
-  return <Homepage featuredSections={featuredSections} posts={posts} />;
+const Main = ({ posts }) => {
+  return (
+    <Homepage
+      activePage={1}
+      featuredSections={featuredSections}
+      posts={posts}
+    />
+  );
 };
 
-export default Home;
+export default Main;

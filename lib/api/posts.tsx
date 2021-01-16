@@ -12,6 +12,10 @@ export const getPostById = (id: string) => {
   return getAllPosts().find((post) => post.id === id);
 };
 
+export const getPostsInRange = (start: number, end: number) => {
+  return getAllPosts().slice(start, end);
+};
+
 const getAllPosts = () => {
   const directory = path.join(process.cwd(), "posts");
   const fileNames = fs.readdirSync(directory);

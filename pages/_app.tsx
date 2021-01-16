@@ -13,7 +13,7 @@ import "./styles.css";
 const pages: Page[] = [
   { label: "Home", path: "/" },
   { label: "Blog", path: "/blog" },
-  { label: "Projects", path: "/", comingSoon: true },
+  { label: "Projects", path: "/projects" },
   { label: "About", path: "/about" },
 ];
 
@@ -21,7 +21,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Welcome to ssr-blog!</title>
+        <title>Welcome to Software With Sarah!</title>
       </Head>
       <div className="app">
         <AppToolbar />
