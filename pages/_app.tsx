@@ -11,10 +11,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./styles.css";
 
 const pages: Page[] = [
-  { label: "Home", path: "/" },
-  { label: "Blog", path: "/blog" },
-  { label: "Projects", path: "/projects" },
-  { label: "About", path: "/about" },
+  { label: "HOME", path: "/" },
+  { label: "BLOG", path: "/blog" },
+  { label: "PROJECTS", path: "/projects" },
+  { label: "ABOUT", path: "/about" },
 ];
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
