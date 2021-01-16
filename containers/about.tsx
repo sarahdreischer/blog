@@ -1,6 +1,6 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
-import Image from "next/image";
+import style from "./about.module.css";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AboutPageProps {}
@@ -11,11 +11,18 @@ export const AboutPage = (props: AboutPageProps) => {
       main={
         <Container>
           <Row>
-            <Col lg={4} className="pt-4">
-              <Image width={500} height={580} src={"/profile.jpeg"} priority />
+            <Col md={4} className="d-flex justify-content-center">
+              <Image
+                className="my-auto"
+                style={{ width: 250, height: 250, objectFit: "cover" }}
+                roundedCircle
+                src="/profile.jpeg"
+              />
             </Col>
-            <Col lg={8}>
-              <h1 className="py-3">About Me</h1>
+            <Col md={8}>
+              <h1 className="py-4 justify-content-center text-center">
+                About Me
+              </h1>
               <p className="text-justify">
                 Hi - thank you very much for visiting my blog! I'm Sarah
                 Dreischer, a 24 year old Software Engineer living and working in

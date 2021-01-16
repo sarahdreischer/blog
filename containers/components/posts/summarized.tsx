@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import { Post } from '@software-with-sarah/api-interfaces';
 import { Button, Col, Image, Row } from "react-bootstrap";
 
 interface SummarizedPostsProp {
