@@ -1,13 +1,15 @@
 import { Container, Image } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
-import parse from "html-react-parser";
+import hydrate from "next-mdx-remote/hydrate";
 
 interface BlogPostPageProps {
   post: Post;
 }
 
 export const BlogPostPage = ({ post }: BlogPostPageProps) => {
+  const content = hydrate(post.content);
+
   return (
     <BodyWrapper
       header={
@@ -20,7 +22,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
       main={
         <Container fluid className="text-left pt-5">
           <h1 className="display-4">{post.title}</h1>
-          <div className="pt-3">{parse(post.content)}</div>
+          <div className="pt-3">{content}</div>
         </Container>
       }
       sidebar={

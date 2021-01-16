@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import renderToString from "next-mdx-remote/render-to-string";
 
 export const getAllSortedPosts = () => {
   return getAllPosts().sort((postA, postB) =>
@@ -26,19 +27,17 @@ const getAllPosts = () => {
   const fileNames = fs.readdirSync(directory);
 
   return fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
+    const id = fileName.replace(/\.mdx$/, "");
     const fullPath = path.join(directory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents);
-    const data = matterResult.data;
-
+    const { content, data } = matter(fileContents);
     return {
       id,
       title: data.title,
       createdAt: data.createdAt,
       imageUrl: data.imageUrl,
       summary: data.summary,
-      content: matterResult.content,
+      content: content,
       ...data,
     };
   });
