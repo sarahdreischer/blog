@@ -1,10 +1,9 @@
-import { Button, Divider, Toolbar, Typography } from '@material-ui/core';
-import { NextComponentType, NextPageContext } from 'next';
-import { Container, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { Footer } from './footer';
+import { Button, Divider, Toolbar, Typography } from "@material-ui/core";
+import { NextComponentType, NextPageContext } from "next";
+import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Footer } from "./footer";
 
 interface DefaultLayoutProps {
-  // eslint-disable-next-line @typescript-eslint/ban-types
   Component: NextComponentType<NextPageContext, any, {}>;
   pageProps: any;
 }
@@ -13,14 +12,13 @@ export const AppToolbar = (props) => {
   return (
     <Toolbar className="w-100">
       <Typography
-        className="flex-grow-1 text-left"
-        component="h2"
+        className="flex-grow-1 text-left blog-title"
         variant="h5"
         color="inherit"
         align="center"
         noWrap
       >
-        Software With Sarah
+        <b>SOFTWARE WITH SARAH</b>
       </Typography>
       <div className="justify-content-end">
         <OverlayTrigger

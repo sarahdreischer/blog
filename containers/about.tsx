@@ -1,8 +1,6 @@
 import { Col, Container, Row, Image } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
-import style from "./about.module.css";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AboutPageProps {}
 
 export const AboutPage = (props: AboutPageProps) => {
@@ -13,10 +11,10 @@ export const AboutPage = (props: AboutPageProps) => {
           <Row>
             <Col md={4} className="d-flex justify-content-center">
               <Image
-                className="my-auto"
-                style={{ width: 250, height: 250, objectFit: "cover" }}
-                roundedCircle
                 src="/profile.jpeg"
+                style={{ width: 250, height: 250, objectFit: "cover" }}
+                className="my-auto shadow"
+                roundedCircle
               />
             </Col>
             <Col md={8}>

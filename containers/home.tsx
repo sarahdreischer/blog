@@ -50,10 +50,7 @@ export const Homepage = ({
       }
       sidebar={
         <div className="flex-column justify-content-center">
-          <h6 className="text-justify">
-            All Blog Posts written by Sarah Dreischer, Software Developer in
-            London, UK.
-          </h6>
+          <h6 className="text-justify">Welcome to Software with Sarah!</h6>
         </div>
       }
     />
