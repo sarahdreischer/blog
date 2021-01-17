@@ -18,7 +18,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
         <Image
           className="w-100 summary-img"
           objectFit="cover"
-          height={100}
+          height={120}
           width={400}
           layout="responsive"
           src={post.imageUrl}
