@@ -12,7 +12,7 @@ export const AboutPage = (props: AboutPageProps) => {
           <Row>
             <Col md={4} className="d-flex justify-content-center my-auto">
               <Image
-                className="round-img about-me-img"
+                className="round-img shadow"
                 width={250}
                 height={250}
                 objectFit="cover"
