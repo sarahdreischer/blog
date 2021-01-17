@@ -32,9 +32,9 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
       }
       sidebar={
         //TODO add small image of me here
-        <span className="pt-5">
-          Published by Sarah Dreischer, Software Engineer from London, UK on{" "}
-          {new Date(post.createdAt).toDateString()}.
+        <span>
+          Published by <b>Sarah Dreischer, Software Engineer from London, UK</b>{" "}
+          on <b>{new Date(post.createdAt).toDateString()}</b>.
         </span>
       }
     />

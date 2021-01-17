@@ -34,3 +34,13 @@ a.page-link {
 .summary-img {
   max-height: 400px;
 }
+
+.sidebar {
+  margin-top: 100px;
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    margin-top: 20px;
+  }
+}

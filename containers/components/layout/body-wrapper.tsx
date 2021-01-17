@@ -1,5 +1,5 @@
-import { Container } from '@material-ui/core';
-import { Col, Row } from 'react-bootstrap';
+import { Container } from "@material-ui/core";
+import { Col, Row } from "react-bootstrap";
 
 interface BodyWrapperProps {
   main: JSX.Element | JSX.Element[];
@@ -27,7 +27,7 @@ const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
           <Col sm={12} lg={9}>
             <div>{main}</div>
           </Col>
-          <Col sm={12} lg={3} className="p-4">
+          <Col sm={12} lg={3} className="p-4 sidebar">
             {sidebar}
           </Col>
         </Row>
