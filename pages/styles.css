@@ -30,3 +30,7 @@ a.page-link {
 .round-img {
   border-radius: 50%;
 }
+
+.about-me-img {
+  opacity: 0.9;
+}

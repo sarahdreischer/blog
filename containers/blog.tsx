@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button, Row, Col, Container, Card } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
@@ -18,7 +19,13 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
               {posts.map((post) => (
                 <Col key={post.title} md={4} className="d-flex flex-grow pb-3">
                   <Card>
-                    <Card.Img variant="top" src={post.imageUrl} />
+                    <Image
+                      src={post.imageUrl}
+                      width={80}
+                      height={50}
+                      objectFit="cover"
+                      layout="responsive"
+                    />
                     <Card.Body>
                       <Card.Title>{post.title}</Card.Title>
                       <Card.Text>{post.summary}</Card.Text>
