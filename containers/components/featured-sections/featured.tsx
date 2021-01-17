@@ -28,18 +28,15 @@ export const Featured = ({ sections }: FeaturedProps) => {
 };
 
 const generateOverlays = (sections: FeaturedSection[]) => {
-  if (sections) {
-    return sections.map((section) => (
-      <OverlayImage
-        url={section.imageUrl}
-        title={section.title}
-        buttonText="Post coming soon"
-        onButtonClick={() => console.log("Clicked Read more")}
-        key={section.title}
-      />
-    ));
-  }
-  return [];
+  return sections.map((section) => (
+    <OverlayImage
+      url={section.imageUrl}
+      title={section.title}
+      buttonText="Post coming soon"
+      onButtonClick={() => console.log("Clicked Read more")}
+      key={section.title}
+    />
+  ));
 };
 
 const OverlayImage = ({
