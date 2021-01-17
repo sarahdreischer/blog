@@ -1,5 +1,6 @@
-import { Button, Divider, Toolbar, Typography } from "@material-ui/core";
+import { Button, Divider, Toolbar } from "@material-ui/core";
 import { NextComponentType, NextPageContext } from "next";
+import Image from "next/image";
 import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Footer } from "./footer";
 
@@ -11,16 +12,8 @@ interface DefaultLayoutProps {
 export const AppToolbar = (props) => {
   return (
     <Toolbar className="w-100">
-      <Typography
-        className="flex-grow-1 text-left blog-title"
-        variant="h5"
-        color="inherit"
-        align="center"
-        noWrap
-      >
-        <b>SOFTWARE WITH SARAH</b>
-      </Typography>
-      <div className="justify-content-end">
+      <Image src="/logo.svg" width={200} height={70} objectFit="contain" />
+      <div className="ml-auto mt-2 justify-content-end">
         <OverlayTrigger
           placement="bottom"
           delay={{ show: 250, hide: 400 }}
