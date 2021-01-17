@@ -1,5 +1,4 @@
-import { Button, Divider } from "@material-ui/core";
-import Link from "next/link";
+import { Divider } from "@material-ui/core";
 import { Row } from "react-bootstrap";
 import { Featured } from "./components/featured-sections/featured";
 import { BodyWrapper } from "./components/layout/body-wrapper";
@@ -27,24 +26,11 @@ export const Homepage = ({
           <Divider />
           <SummarizedPosts posts={posts} />
           <Row className="float-right">
-            <div>
-              <DefaultPagination
-                activePage={activePage}
-                maxNumber={maxNumberOfPages}
-                visibleRange={5}
-              />
-            </div>
-            <div className="pl-2">
-              <Link as={`/page/${activePage + 1}`} href="/page/[page]">
-                <Button
-                  size="small"
-                  variant="outlined"
-                  disabled={activePage >= maxNumberOfPages}
-                >
-                  Next
-                </Button>
-              </Link>
-            </div>
+            <DefaultPagination
+              activePage={activePage}
+              maxNumber={maxNumberOfPages}
+              visibleRange={5}
+            />
           </Row>
         </>
       }

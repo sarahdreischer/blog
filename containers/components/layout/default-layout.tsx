@@ -18,7 +18,7 @@ export const AppToolbar = (props) => {
         align="center"
         noWrap
       >
-        <b>Software With Sarah</b>
+        <b>SOFTWARE WITH SARAH</b>
       </Typography>
       <div className="justify-content-end">
         <OverlayTrigger
