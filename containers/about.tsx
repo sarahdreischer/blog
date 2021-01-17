@@ -1,5 +1,6 @@
-import { Col, Container, Row, Image } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
+import Image from "next/image";
 
 interface AboutPageProps {}
 
@@ -9,12 +10,14 @@ export const AboutPage = (props: AboutPageProps) => {
       main={
         <Container>
           <Row>
-            <Col md={4} className="d-flex justify-content-center">
+            <Col md={4} className="d-flex justify-content-center my-auto">
               <Image
+                className="round-img"
+                width={200}
+                height={200}
+                objectFit="cover"
+                layout="fixed"
                 src="/profile.jpeg"
-                style={{ width: 250, height: 250, objectFit: "cover" }}
-                className="my-auto shadow"
-                roundedCircle
               />
             </Col>
             <Col md={8}>

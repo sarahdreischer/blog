@@ -26,3 +26,7 @@ a.page-link {
   margin-top: 40vh;
   margin-bottom: 40vh;
 }
+
+.round-img {
+  border-radius: 50%;
+}
