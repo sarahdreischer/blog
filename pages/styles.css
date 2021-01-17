@@ -30,3 +30,7 @@ a.page-link {
 .round-img {
   border-radius: 50%;
 }
+
+.summary-img {
+  max-height: 400px;
+}

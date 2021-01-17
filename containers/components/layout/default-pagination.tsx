@@ -1,4 +1,6 @@
-import { Pagination } from "react-bootstrap";
+import { Pagination, Row } from "react-bootstrap";
+import { Button } from "@material-ui/core";
+import Link from "next/link";
 
 interface DefaultPaginationProps {
   maxNumber: number;
@@ -33,8 +35,20 @@ export const DefaultPagination = ({
   };
 
   return (
-    <span>
-      <Pagination size="sm">{getPaginationItems()}</Pagination>
-    </span>
+    <Row>
+      <Pagination size="sm" className="mb-0">
+        {getPaginationItems()}
+      </Pagination>
+      <Link as={`/page/${activePage + 1}`} href="/page/[page]">
+        <Button
+          className="ml-2"
+          size="small"
+          variant="outlined"
+          disabled={activePage >= maxNumber}
+        >
+          Next
+        </Button>
+      </Link>
+    </Row>
   );
 };
