@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Button, Col, Image, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
+import Image from "next/image";
 
 interface SummarizedPostsProp {
   posts: Array<any>;
@@ -41,7 +42,13 @@ export const PostSummary = ({
     <div className="text-left pb-3">
       <Row>
         <Col md={5}>
-          <Image src={imageUrl} fluid />
+          <Image
+            src={imageUrl}
+            width={100}
+            height={65}
+            objectFit="cover"
+            layout="responsive"
+          />
         </Col>
         <Col md={7}>
           <h5>{title}</h5>
