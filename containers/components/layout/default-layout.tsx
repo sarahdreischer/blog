@@ -12,7 +12,13 @@ interface DefaultLayoutProps {
 export const AppToolbar = (props) => {
   return (
     <Toolbar className="w-100">
-      <Image src="/logo.svg" width={200} height={70} objectFit="contain" />
+      <Image
+        src="/logo.svg"
+        width={200}
+        height={70}
+        objectFit="contain"
+        priority
+      />
       <div className="ml-auto mt-2 justify-content-end">
         <OverlayTrigger
           placement="bottom"

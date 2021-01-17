@@ -18,6 +18,7 @@ export const AboutPage = (props: AboutPageProps) => {
                 objectFit="cover"
                 layout="fixed"
                 src="/profile.jpeg"
+                priority
               />
             </Col>
             <Col md={8}>
