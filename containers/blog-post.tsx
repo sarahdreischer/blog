@@ -1,8 +1,9 @@
-import { Container, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
 import PostComponents from "./components/posts/post-components";
+import Image from "next/image";
 
 interface BlogPostPageProps {
   post: Post;
@@ -15,8 +16,11 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
     <BodyWrapper
       header={
         <Image
-          className="w-100"
-          style={{ maxHeight: 400, objectFit: "cover" }}
+          className="w-100 summary-img"
+          objectFit="cover"
+          height={100}
+          width={400}
+          layout="responsive"
           src={post.imageUrl}
         />
       }
