@@ -6,6 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Bootstrap Overrides */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.8);
   font-family: "Nunito", sans-serif;
@@ -18,9 +19,22 @@ body {
   border-color: #e29578;
 }
 
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #093f48;
+  border-color: #093f48;
+}
+
+.btn-outline-info {
+  color: #093f48;
+  border-color: #093f48;
+}
+
 a.page-link {
   color: #000;
 }
+
+/* Custom CSS */
 
 .coming-soon {
   margin-top: 40vh;
@@ -36,7 +50,7 @@ a.page-link {
 }
 
 .sidebar {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 @media (max-width: 500px) {

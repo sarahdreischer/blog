@@ -18,6 +18,7 @@ export const AboutPage = (props: AboutPageProps) => {
                 objectFit="cover"
                 layout="fixed"
                 src="/profile.jpeg"
+                alt="Sarah Dreischer"
                 priority
               />
             </Col>

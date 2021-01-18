@@ -36,7 +36,7 @@ export const Homepage = ({
       }
       sidebar={
         <div className="flex-column justify-content-center">
-          <h6 className="text-justify">Welcome to Software with Sarah!</h6>
+          <h6 className="text-center">Welcome to Software with Sarah!</h6>
         </div>
       }
     />

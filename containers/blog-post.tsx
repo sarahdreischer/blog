@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
@@ -31,11 +31,27 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
         </Container>
       }
       sidebar={
-        //TODO add small image of me here
-        <span>
-          Published by <b>Sarah Dreischer, Software Engineer from London, UK</b>{" "}
-          on <b>{new Date(post.createdAt).toDateString()}</b>.
-        </span>
+        <Container>
+          <Row className="justify-content-center">
+            <Image
+              className="round-img"
+              width={50}
+              height={50}
+              objectFit="cover"
+              layout="fixed"
+              src="/profile.jpeg"
+              alt="Sarah Dreischer"
+              priority
+            />
+          </Row>
+          <Row className="text-left pt-3">
+            <span>
+              Published by{" "}
+              <b>Sarah Dreischer, Software Engineer from London, UK</b> on{" "}
+              <b>{new Date(post.createdAt).toDateString()}</b>.
+            </span>
+          </Row>
+        </Container>
       }
     />
   );
