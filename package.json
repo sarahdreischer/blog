@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
+    "react-code-blocks": "^0.0.8",
     "typescript": "^4.1.3"
   }
 }

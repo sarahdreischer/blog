@@ -1,5 +1,5 @@
-import { Button } from "react-bootstrap";
+import { CopyBlock, tomorrow } from "react-code-blocks";
 
-const PostComponents = { Button };
+const PostComponents = { CopyBlock, tomorrow };
 
 export default PostComponents;
