@@ -1,6 +1,6 @@
 import { Divider } from "@material-ui/core";
 import { Row } from "react-bootstrap";
-import { Featured } from "./components/featured-sections/featured";
+import { FeaturedSections } from "./components/featured-sections/featured-sections";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { DefaultPagination } from "./components/layout/default-pagination";
 import { SummarizedPosts } from "./components/posts/summarized";
@@ -22,7 +22,7 @@ export const Homepage = ({
     <BodyWrapper
       main={
         <>
-          <Featured sections={featuredSections} />
+          <FeaturedSections sections={featuredSections} />
           <Divider />
           <SummarizedPosts posts={posts} />
           <Row className="float-right pr-2">

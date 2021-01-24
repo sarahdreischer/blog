@@ -1,27 +1,47 @@
 ---
-title: "How to Set-Up Next.JS in an Nx Workspace"
+title: "How to Set-Up, Build and Deploy a Next.JS app with Nx"
 createdAt: "Mon, 01 Jan 2021 18:00:33 GMT"
-subtitle: "Nx Tutorials"
+subtitle: ""
 imageUrl: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw"
-summary: "Read this blog post to find out how to set up Next.Js in an Nx workspace using the new @nrwl/next plugin."
+summary: "Read this blog post to find out how to Set Up, Build and Deploy Next.Js with Nx using the new @nrwl/next plugin."
+tags: "nx, workspace, next.js, next, nrwl, @nrwl, set-up, set, up, build, deplo"
 notes: "Will contain a link on to the future deployment blog post"
 ---
 
-# Introduction
+Nx is a great toolkit for monorepos encompassing many tools, and out-of-the-box configurations,
+such as Typescript, ESLint, TSConfig, Webpack as well as well-known plugins and frameworks such as React,
+Angular, Next.JS, Express etc. Within an NX monorepo you can for example create a React app and an Express
+API app that are both sharing a common library. This makes your applications more coherent and compatible.
 
-1. How to set-up Next.Js normally (e.g. create-next-app)
-2. Why should someone use an Nx workspace (however note that if you're here you probably
-   already have an Nx workspace or are thinking of using it)
-3. Refer to github for full tutorial breakdown
+## Set-Up an Nx workspace
 
-## How to create a new Nx workspace
+To get started open your terminal. If you haven't already installed Npx install it using the following
+command:
 
-## How to add @nrwl/next plugin
+<code>npm install -g npx </code>
 
-## Example package.json with scripts to...
+To create the workspace run the following command:
 
-### a) run the dev application
+<code>npx create-nx-workspace</code>
 
-### b) run the build and
+Now you can name your workspace, choose your application type and name your application:
 
-### c) serve the build.
+      1. Enter your workspace name: your_workspace_name
+      2. Choose Next.JS to crate the new workspace
+      3. Name th Next.JS application: your_app_name
+      4. Choose your stylesheet format (e.g. CSS, SASS)
+
+To start your Next project, from the terminal go inside the new workspace directory and type in
+`npm run start` or `yarn run start` (depending on the package manager used). Note: If you get the
+`Browserslist: caniuse-lite is outdated.` error, run `npm update`.
+
+Now you should be able to access your page on `localhost:4200`.
+
+To build your application, run `npm run build` or `yarn run build`. This will add your built
+application to the `dist/apps/your_app_name` direcotry.
+
+To run the prod build add the following script to your package.json file:
+
+<code>"prod": "next start dist/apps/your_app_name"</code>
+
+Now you can call <code>npm run prod</code> to test the prod build from localhost:3000 by default.
