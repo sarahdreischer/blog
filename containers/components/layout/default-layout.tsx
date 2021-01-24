@@ -17,7 +17,6 @@ export const AppToolbar = (props) => {
         width={200}
         height={70}
         objectFit="contain"
-        layout="fixed"
         priority
       />
       <div className="ml-auto mt-2 justify-content-end">
