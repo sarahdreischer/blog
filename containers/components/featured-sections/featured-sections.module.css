@@ -1,0 +1,14 @@
+.smallImage {
+  height: 200px;
+}
+
+.largeImage {
+  min-height: 200px;
+}
+
+@media (max-width: 768px) {
+  .largeImage {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+}

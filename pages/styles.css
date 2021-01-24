@@ -66,7 +66,7 @@ a.page-link {
   margin-top: 100px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .home-sidebar,
   .post-sidebar {
     margin-top: 20px;

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container, Button, Row } from "react-bootstrap";
 import styles from "./overlay-image.module.css";
 
@@ -18,12 +19,13 @@ export const OverlayImage = ({
 }: OverlayImageProps) => {
   return (
     <div className={`${styles.imageContainer} ${className}`}>
-      <img
-        className="d-block w-100 h-100"
-        style={{ objectFit: "cover" }}
+      <Image
         src={url}
-        key={title}
         alt={title}
+        key={title}
+        objectFit="cover"
+        layout="fill"
+        priority
       />
       <div className={styles.overlay}>
         <Container className="h-75">
