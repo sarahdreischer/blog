@@ -8,46 +8,53 @@ tags: "nx, workspace, next.js, next, nrwl, @nrwl, set-up, set, up, build, deplo"
 notes: "Will contain a link on to the future deployment blog post"
 ---
 
-Nx is a great toolkit for monorepos encompassing many tools, and out-of-the-box configurations,
-such as Typescript, ESLint, TSConfig, Webpack as well as well-known plugins and frameworks such as React,
-Angular, Next.JS, Express etc. Within an NX monorepo you can for example create a React app and an Express
-API app that are both sharing a common library. This makes your applications more coherent and compatible.
+Nx is a great toolkit for monorepos that comes with many tools, configurations and plugins out-of-the-box
+such as Typescript, ESLint, TSConfig, Webpack and well-known frameworks such as React, Angular, Next.JS, Express.
+The advantage of monorepos is that you can create scalable applications with interdependencies, e.g. you can have a
+Next.JS app and an Express Api server which are both sharing a common library. This makes your applications more coherent
+and compatible.
 
-## Set-Up an Nx workspace
+**Note:** In this tutorial I will be using the NPM package manager as opposed to Yarn. If you're using Yarn,
+simply replace **npm** with **yarn** for the command used here.
 
-To get started open your terminal. If you haven't already installed Npx install it using the following
-command:
+# 1. Set-Up Nx
 
-```bash
-npm install -g npx
-```
-
-To create the workspace run the following command:
+To set up your workspace run the command(s) below:
 
 ```bash
+npm install -g npx # skip this if you've already installed npx
 npx create-nx-workspace
+
+## You will be asked to answer similar questions to the ones below
+# Enter your workspace name: your_workspace_name
+# Choose Next.JS to crate the new workspace
+# Name th Next.JS application: your_app_name
+# Choose your stylesheet format (e.g. CSS, SASS)
 ```
 
-Now you can name your workspace, choose your application type and name your application:
+Congrats! After a few minutes your workspace should be set up and you can continue building your application.
 
+# 2. Serve and Build your Next.JS App
+
+To start your Next project, from the terminal go inside the workspace directory and run the following command:
+
+```bash
+npm run start
 ```
-Enter your workspace name: your_workspace_name
-Choose Next.JS to crate the new workspace
-Name th Next.JS application: your_app_name
-Choose your stylesheet format (e.g. CSS, SASS)
-```
 
-To start your Next project, from the terminal go inside the new workspace directory and type in
-`npm run start` or `yarn run start` (depending on the package manager used). Note: If you get the
-`Browserslist: caniuse-lite is outdated.` error, run `npm update`.
+You should then be able to access your page on **_localhost:4200_**.
 
-Now you should be able to access your page on `localhost:4200`.
+To build your application, run `npm run build` which will automatically add the build files and direcotries inside
+the `dist/apps/your_app_name` directory.
 
-To build your application, run `npm run build` or `yarn run build`. This will add your built
-application to the `dist/apps/your_app_name` direcotry.
+##### Serve the prod build
 
-To run the prod build add the following script to your package.json file:
+Before deployment you'll likely want to test the prod build locally first. You can either run `next start` from the
+`dist/apps/your_app_name` directory or alternatively you can add the following script to your package.json file:
 
 `"prod": "next start dist/apps/your_app_name"`
 
-Now you can call `npm run prod` to test the prod build from localhost:3000 by default.
+This will allow you to call `npm run prod` from the workspace root directory and if everything went well you can visit the prod build
+on localhost:3000.
+
+# 3. Deploy to Vercel

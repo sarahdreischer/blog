@@ -51,8 +51,8 @@ export const PostSummary = ({
           />
         </Col>
         <Col md={7}>
-          <h5>{title}</h5>
-          <p>{paragraph}</p>
+          <h4 className="pb-2">{title}</h4>
+          <p style={{ lineHeight: 1.5 }}>{paragraph}</p>
           <Link as={`/blog/${id}`} href={"/blog/[id]"}>
             <Button variant="outline-info">Read on...</Button>
           </Link>
