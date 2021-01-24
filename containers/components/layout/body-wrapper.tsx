@@ -27,7 +27,7 @@ const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
           <Col sm={12} lg={9}>
             <div>{main}</div>
           </Col>
-          <Col sm={12} lg={3} className="p-4 sidebar">
+          <Col sm={12} lg={3} className="p-4">
             {sidebar}
           </Col>
         </Row>

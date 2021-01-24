@@ -6,6 +6,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+p {
+  font-size: 1.1rem;
+}
+
 /* Bootstrap Overrides */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.8);
@@ -54,12 +58,17 @@ a.page-link {
   max-height: 400px;
 }
 
-.sidebar {
+.home-sidebar {
   margin-top: 50px;
 }
 
+.post-sidebar {
+  margin-top: 100px;
+}
+
 @media (max-width: 500px) {
-  .sidebar {
+  .home-sidebar,
+  .post-sidebar {
     margin-top: 20px;
   }
 }

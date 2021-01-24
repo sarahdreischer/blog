@@ -32,7 +32,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
         </Container>
       }
       sidebar={
-        <Container>
+        <Container className="post-sidebar">
           <Row className="justify-content-center">
             <Image
               className="round-img"

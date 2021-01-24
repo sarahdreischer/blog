@@ -6,8 +6,8 @@ export const PostComponents = {};
 export const PostStylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
   h2: ({ children }) => <Heading2 children={children} />,
-  p: (props) => <p style={{ lineHeight: 2.5 }} {...props} />,
-  "p.inlineCode": (props) => <InlineCode props={props} />,
+  p: (props) => <Paragraph {...props} />,
+  "p.inlineCode": (props) => <InlineCode {...props} />,
   pre: ({ children }) => <CodeBlock children={children} />,
 };
 
@@ -19,8 +19,12 @@ const Heading1 = ({ children }) => {
 
 const Heading2 = ({ children }) => {
   return (
-    <h4 className="font-weight-bold heading-color pb-2 pt-1">{children}</h4>
+    <h4 className="font-weight-bold heading-color py-2 ml-4">{children}</h4>
   );
+};
+
+const Paragraph = (props) => {
+  return <p className="text-justify" style={{ lineHeight: 2.3 }} {...props} />;
 };
 
 const InlineCode = (props) => {
@@ -28,8 +32,8 @@ const InlineCode = (props) => {
     <code
       {...props}
       style={{
-        backgroundColor: "lightgray",
-        color: "black",
+        backgroundColor: "#ececec",
+        color: "#323232",
       }}
     />
   );
