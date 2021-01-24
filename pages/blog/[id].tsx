@@ -1,7 +1,11 @@
 import { getAllSortedPosts, getPostById } from "../../lib/api/posts";
 import { BlogPostPage } from "../../containers/blog-post";
 import renderToString from "next-mdx-remote/render-to-string";
-import PostComponents from "containers/components/posts/post-components";
+import {
+  PostComponents,
+  PostStylingComponents,
+} from "containers/components/posts/post-components";
+import { MDXProvider } from "@mdx-js/react";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -25,7 +29,11 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const BlogPost = ({ post }) => {
-  return <BlogPostPage post={post} />;
+  return (
+    <MDXProvider components={PostStylingComponents}>
+      <BlogPostPage post={post} />
+    </MDXProvider>
+  );
 };
 
 export default BlogPost;

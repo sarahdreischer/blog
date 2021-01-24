@@ -18,18 +18,24 @@ API app that are both sharing a common library. This makes your applications mor
 To get started open your terminal. If you haven't already installed Npx install it using the following
 command:
 
-<code>npm install -g npx </code>
+```bash
+npm install -g npx
+```
 
 To create the workspace run the following command:
 
-<code>npx create-nx-workspace</code>
+```bash
+npx create-nx-workspace
+```
 
 Now you can name your workspace, choose your application type and name your application:
 
-      1. Enter your workspace name: your_workspace_name
-      2. Choose Next.JS to crate the new workspace
-      3. Name th Next.JS application: your_app_name
-      4. Choose your stylesheet format (e.g. CSS, SASS)
+```
+Enter your workspace name: your_workspace_name
+Choose Next.JS to crate the new workspace
+Name th Next.JS application: your_app_name
+Choose your stylesheet format (e.g. CSS, SASS)
+```
 
 To start your Next project, from the terminal go inside the new workspace directory and type in
 `npm run start` or `yarn run start` (depending on the package manager used). Note: If you get the
@@ -42,6 +48,6 @@ application to the `dist/apps/your_app_name` direcotry.
 
 To run the prod build add the following script to your package.json file:
 
-<code>"prod": "next start dist/apps/your_app_name"</code>
+`"prod": "next start dist/apps/your_app_name"`
 
-Now you can call <code>npm run prod</code> to test the prod build from localhost:3000 by default.
+Now you can call `npm run prod` to test the prod build from localhost:3000 by default.

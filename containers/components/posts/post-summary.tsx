@@ -13,7 +13,7 @@ interface PostSummaryProps {
   paragraph: string;
 }
 
-export const SummarizedPosts = ({ posts }: SummarizedPostsProp) => {
+export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
   return (
     <div className="d-flex flex-column p-3">
       <h4 className="text-left pb-2">Recent Blog Posts</h4>

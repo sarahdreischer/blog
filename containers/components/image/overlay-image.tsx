@@ -18,7 +18,13 @@ export const OverlayImage = ({
 }: OverlayImageProps) => {
   return (
     <div className={`${styles.imageContainer} ${className}`}>
-      <img className="d-block w-100 h-100" src={url} key={title} alt={title} />
+      <img
+        className="d-block w-100 h-100"
+        style={{ objectFit: "cover" }}
+        src={url}
+        key={title}
+        alt={title}
+      />
       <div className={styles.overlay}>
         <Container className="h-75">
           <Row className="h-100 justify-content-center align-items-center">

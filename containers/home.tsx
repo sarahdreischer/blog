@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import { FeaturedSections } from "./components/featured-sections/featured-sections";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { DefaultPagination } from "./components/layout/default-pagination";
-import { SummarizedPosts } from "./components/posts/summarized";
+import { PostSummaries } from "./components/posts/post-summary";
 
 interface HomepageProps {
   featuredSections: Array<any>;
@@ -24,7 +24,7 @@ export const Homepage = ({
         <>
           <FeaturedSections sections={featuredSections} />
           <Divider />
-          <SummarizedPosts posts={posts} />
+          <PostSummaries posts={posts} />
           <Row className="float-right pr-2">
             <DefaultPagination
               activePage={activePage}

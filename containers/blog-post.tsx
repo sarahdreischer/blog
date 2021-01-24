@@ -2,7 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
-import PostComponents from "./components/posts/post-components";
+import { PostComponents } from "./components/posts/post-components";
 import Image from "next/image";
 
 interface BlogPostPageProps {
