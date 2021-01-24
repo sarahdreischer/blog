@@ -25,6 +25,7 @@ export const OverlayImage = ({
         key={title}
         objectFit="cover"
         layout="fill"
+        priority
       />
       <div className={styles.overlay}>
         <Container className="h-75">
