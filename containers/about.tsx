@@ -26,26 +26,29 @@ export const AboutPage = (props: AboutPageProps) => {
               <h1 className="py-4 justify-content-center text-center">
                 About Me
               </h1>
-              <p className="text-justify">
-                Hi - thank you very much for visiting my blog! I'm Sarah
-                Dreischer, a 24 year old Software Engineer living and working in
-                London, UK. I graduated with an Electrical and Electronics
-                Engineering degree from University College London in 2018 and
-                have since then worked as an Electrical Engineer and Software
-                Engineer. Through work and personal projects I was able to dip
-                my toes into Java SpringBoot, Kubernetes, Cloud, DevOps,
-                Angular, React and NodeJS.
-                <br />
-                <br />
-                This blog was coded from scratch using React for the front-end
-                and NodeJs for the backend. The majority of the blog services
-                are hosted on Kubernetes in the Cloud. If you have any questions
-                on how I put this blog together which I haven't covered in a
-                blog post - feel free to reach out to me.
-                <br />
-                <br />
-                <b>Email:</b> softwarewithsarah@gmail.com
+              <p>
+                <b className="highlight-color">Hello there!</b> Many thanks for
+                taking your time to read my About Page.
               </p>
+              <p>
+                I'm <b>Sarah Dreischer</b> - a 24 year old Full-Stack Software
+                Engineer with an Electronics Engineering background. I'm living
+                and working in London, UK since 2014. Through work and personal
+                projects I was able to dip my toes into Java SpringBoot,
+                Kubernetes, Cloud, DevOps, Angular, React etc. With this Blog
+                I'm hoping that I can share with you what I have learned along
+                the way.
+              </p>
+              <p>
+                This blog was coded from scratch using Next.JS (a framework
+                built on top of React) and is deployed on the <b>Vercel</b>{" "}
+                platform. If you have any questions on how I put this blog
+                together which I haven't covered in a blog post, feel free to
+                reach out to me.
+              </p>
+              <b className="highlight-color">
+                Contact me on softwarewithsarah@gmail.com
+              </b>
             </Col>
           </Row>
         </Container>

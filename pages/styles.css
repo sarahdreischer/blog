@@ -6,10 +6,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-p {
-  font-size: 1.1rem;
-}
-
 /* Bootstrap Overrides */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.8);
@@ -41,6 +37,10 @@ a.page-link {
 /* Colors */
 .heading-color {
   color: #093f48;
+}
+
+.highlight-color {
+  color: #e29578;
 }
 
 /* Custom CSS */

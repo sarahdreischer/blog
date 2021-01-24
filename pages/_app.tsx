@@ -21,7 +21,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Welcome to Software With Sarah!</title>
+        <title>Software With Sarah</title>
       </Head>
       <div className="app">
         <AppToolbar />

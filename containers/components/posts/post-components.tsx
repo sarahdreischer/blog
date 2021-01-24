@@ -1,5 +1,6 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwlLight";
+import styles from "./post-components.module.css";
 
 export const PostComponents = {};
 
@@ -24,7 +25,13 @@ const Heading2 = ({ children }) => {
 };
 
 const Paragraph = (props) => {
-  return <p className="text-justify" style={{ lineHeight: 2.3 }} {...props} />;
+  return (
+    <p
+      className={`text-justify ${styles.fontSize}`}
+      style={{ lineHeight: 2.3 }}
+      {...props}
+    />
+  );
 };
 
 const InlineCode = (props) => {
