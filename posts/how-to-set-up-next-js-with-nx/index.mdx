@@ -15,7 +15,7 @@ Next.JS app and an Express Api server which are both sharing a common library. T
 and compatible.
 
 **Note:** In this tutorial I will be using the NPM package manager as opposed to Yarn. If you're using Yarn,
-simply replace **npm** with **yarn** for the command used here.
+simply replace **npm** with **yarn** in the commands.
 
 # 1. Set-Up Nx
 
@@ -25,7 +25,6 @@ To set up your workspace run the command(s) below:
 npm install -g npx # skip this if you've already installed npx
 npx create-nx-workspace
 
-## You will be asked to answer similar questions to the ones below
 # Enter your workspace name: your_workspace_name
 # Choose Next.JS to crate the new workspace
 # Name th Next.JS application: your_app_name
@@ -55,6 +54,27 @@ Before deployment you'll likely want to test the prod build locally first. You c
 `"prod": "next start dist/apps/your_app_name"`
 
 This will allow you to call `npm run prod` from the workspace root directory and if everything went well you can visit the prod build
-on localhost:3000.
+on **_localhost:3000_**.
 
 # 3. Deploy to Vercel
+
+You can sign up on <a href="https://wwww.vercel.com">Vercel.com</a> to deploy and host your Next.JS application for free.
+However, to configure it to deploy the application from a Nx workspace, you must **override** the `Output Directory` and set it as
+`./dist/apps/your_app_name/.next`.
+
+**Note:** You must include **./next** as part of your build path, as Vercel otherwise does not accept the parent directory dist/apps/your_app_name.
+It will throw the following error <i><b>routes-manifest.json could not be found</b></i>.
+
+If your application is built using a custom script in package.json, you can also override the build command.
+
+<div className="text-center">
+  <Image
+    src="/posts/how-to-set-up-next-js-with-nx/vercel_next_js_nx.png"
+    width="500"
+    height="480"
+    objectFit="contain"
+    alt="Next.JS with NX Deployment Configuration for Vercel"
+  />
+</div>
+
+Now click deploy and _Voila_ you can view your application live in production!

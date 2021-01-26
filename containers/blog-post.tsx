@@ -21,6 +21,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
           height={120}
           width={400}
           layout="responsive"
+          alt={post.title}
           src={post.imageUrl}
         />
       }
@@ -39,7 +40,6 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
               width={50}
               height={50}
               objectFit="cover"
-              layout="fixed"
               src="/profile.jpeg"
               alt="Sarah Dreischer"
               priority

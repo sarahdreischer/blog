@@ -1,8 +1,9 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/nightOwlLight";
 import styles from "./post-components.module.css";
+import Image from "next/image";
 
-export const PostComponents = {};
+export const PostComponents = { Image };
 
 export const PostStylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
