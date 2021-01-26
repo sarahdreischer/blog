@@ -16,7 +16,6 @@ export const AboutPage = (props: AboutPageProps) => {
                 width={250}
                 height={250}
                 objectFit="cover"
-                layout="fixed"
                 src="/profile.jpeg"
                 alt="Sarah Dreischer"
                 priority
