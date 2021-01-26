@@ -34,7 +34,7 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
                       style={{ backgroundColor: "white", borderTop: "0" }}
                     >
                       <Link as={`/blog/${post.id}`} href={"/blog/[id]"}>
-                        <Button variant="outline-info">Read on...</Button>
+                        <Button variant="outline-info">Read more...</Button>
                       </Link>
                     </Card.Footer>
                   </Card>

@@ -23,6 +23,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
           layout="responsive"
           alt={post.title}
           src={post.imageUrl}
+          priority
         />
       }
       main={
