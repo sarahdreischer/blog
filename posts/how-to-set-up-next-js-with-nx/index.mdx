@@ -3,69 +3,58 @@ title: "How to Set-Up, Build and Deploy a Next.JS app with Nx"
 createdAt: "Mon, 01 Jan 2021 18:00:33 GMT"
 subtitle: ""
 imageUrl: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw"
-summary: "Read this blog post to find out how to Set Up, Build and Deploy Next.Js with Nx using the new @nrwl/next plugin."
+summary: "Read this blog post to find out how to Set Up and Build a Next.Js application with Nx using the new @nrwl/next plugin. Then also find out how to deploy it to Vercel."
 tags: "nx, workspace, next.js, next, nrwl, @nrwl, set-up, set, up, build, deplo"
 notes: "Will contain a link on to the future deployment blog post"
 ---
 
-Nx is a great toolkit for monorepos that comes with many tools, configurations and plugins out-of-the-box
-such as Typescript, ESLint, TSConfig, Webpack and well-known frameworks such as React, Angular, Next.JS, Express.
-The advantage of monorepos is that you can create scalable applications with interdependencies, e.g. you can have a
-Next.JS app and an Express Api server which are both sharing a common library. This makes your applications more coherent
-and compatible.
+Nx is a great toolkit for monorepos and is packaged with many useful tools, configurations and plugins such as Typescript, ESLint and TSConfig.
+It also supports several frameworks such as React, Angular and Next.JS. The advantage of monorepos over a single repo per application is
+that you can better develop scalable applications that are sharing common libraries and data models or are independent on each other in general.
 
-**Note:** In this tutorial I will be using the NPM package manager as opposed to Yarn. If you're using Yarn,
-simply replace **npm** with **yarn** in the commands.
+**Note:** In this tutorial I will be using NPM as the preferred package manager. If you're using Yarn, simply replace **npm** with **yarn** in the commands.
 
 # 1. Set-Up Nx
 
-To set up your workspace run the command(s) below:
+To set up your workspace run the command(s) below (you may skip the first command if you already have npx installed):
 
 ```bash
-npm install -g npx # skip this if you've already installed npx
+npm install -g npx
 npx create-nx-workspace
-
-# Enter your workspace name: your_workspace_name
-# Choose Next.JS to crate the new workspace
-# Name th Next.JS application: your_app_name
-# Choose your stylesheet format (e.g. CSS, SASS)
 ```
 
-Congrats! After a few minutes your workspace should be set up and you can continue building your application.
+You will then be prompted to configure your workspace and the first application(s). From the avialble options choose the Next.Js plugin.
 
 # 2. Serve and Build your Next.JS App
 
-To start your Next project, from the terminal go inside the workspace directory and run the following command:
+To serve your Next.JS project, execute the following command within the _workspace root directory_:
 
 ```bash
 npm run start
 ```
 
-You should then be able to access your page on **_localhost:4200_**.
+By default the web page will be accessible from **_localhost:4200_**.
 
-To build your application, run `npm run build` which will automatically add the build files and direcotries inside
+To build your application, run `npm run build` which will automatically add the compiled files and directories inside
 the `dist/apps/your_app_name` directory.
 
 ## Serve the prod build
 
-Before deployment you'll likely want to test the prod build locally first. You can either run `next start` from the
-`dist/apps/your_app_name` directory or alternatively you can add the following script to your package.json file:
+Before deployment you'll likely want to serve the compiled files locally first. You can either run `next start` inside the
+`dist/apps/your_app_name` directory or alternatively add the following script to your package.json file:
 
 `"prod": "next start dist/apps/your_app_name"`
 
-This will allow you to call `npm run prod` from the workspace root directory and if everything went well you can visit the prod build
-on **_localhost:3000_**.
+This will allow you to call `npm run prod` from the workspace root directory and make the production web page available on **_localhost:3000_**.
 
 # 3. Deploy to Vercel
 
-You can sign up on <a href="https://wwww.vercel.com">Vercel.com</a> to deploy and host your Next.JS application for free.
-However, to configure it to deploy the application from a Nx workspace, you must **override** the `Output Directory` and set it as
-`./dist/apps/your_app_name/.next`.
+You can now sign up for a free account on <a href="https://wwww.vercel.com">Vercel.com</a> to deploy and host your application.
+In order for Vercel to deploy an Next.Js application embedded into an Nx workspace, you must configure the pipeline to access the compiled files
+from the `./dist/apps/your_app_name/.next` directory.
 
-**Note:** You must include **./next** as part of your build path, as Vercel otherwise does not accept the parent directory dist/apps/your_app_name.
-It will throw the following error <i><b>routes-manifest.json could not be found</b></i>.
-
-If your application is built using a custom script in package.json, you can also override the build command.
+**Note:** You must include **./next** as part of your Output Directory path, as Vercel will not recognize the parent directory as a Next.Js application.
+Vercel would throw the <i><b>routes-manifest.json could not be found</b></i> error.
 
 <div className="text-center">
   <Image
