@@ -55,6 +55,10 @@ a.page-link {
   color: #e29578;
 }
 
+.container {
+  margin: 0;
+}
+
 /* Custom CSS */
 
 .mail {
