@@ -25,7 +25,7 @@ export const Homepage = ({
           <FeaturedSections sections={featuredSections} />
           <Divider />
           <PostSummaries posts={posts} />
-          <Row className="float-right pr-2">
+          <Row className="float-right mr-1">
             <DefaultPagination
               activePage={activePage}
               maxNumber={maxNumberOfPages}

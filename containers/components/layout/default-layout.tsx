@@ -41,10 +41,7 @@ export const AppContainer = ({ Component, pageProps }: DefaultLayoutProps) => {
         <Component {...pageProps} />
       </div>
       <Divider />
-      <Footer
-        title=""
-        description="Contact me for any questions or suggestions."
-      />
+      <Footer />
     </Container>
   );
 };

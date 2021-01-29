@@ -4,6 +4,7 @@ import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
 import { PostComponents } from "./components/posts/post-components";
 import Image from "next/image";
+import moment from "moment";
 
 interface BlogPostPageProps {
   post: Post;
@@ -11,6 +12,7 @@ interface BlogPostPageProps {
 
 export const BlogPostPage = ({ post }: BlogPostPageProps) => {
   const content = hydrate(post.content, { components: PostComponents });
+  const postDate = moment(new Date(post.createdAt)).format("DD/MM/YYYY");
 
   return (
     <BodyWrapper
@@ -50,7 +52,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
             <span>
               Published by{" "}
               <b>Sarah Dreischer, Software Engineer from London, UK</b> on{" "}
-              <b>{new Date(post.createdAt).toDateString()}</b>.
+              <b>{postDate}</b>.
             </span>
           </Row>
         </Container>
