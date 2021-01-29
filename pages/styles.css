@@ -55,8 +55,8 @@ a.page-link {
   color: #e29578;
 }
 
-.container {
-  margin: 0;
+.body-wrapper-container {
+  width: 90%;
 }
 
 /* Custom CSS */

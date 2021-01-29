@@ -1,5 +1,4 @@
-import { Container } from "@material-ui/core";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 interface BodyWrapperProps {
   main: JSX.Element | JSX.Element[];
@@ -22,7 +21,7 @@ export const BodyWrapper = ({ main, sidebar, header }: BodyWrapperProps) => {
 const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
   if (sidebar) {
     return (
-      <Container maxWidth="lg">
+      <Container fluid className="body-wrapper-container">
         <Row>
           <Col sm={12} lg={9}>
             <div>{main}</div>
