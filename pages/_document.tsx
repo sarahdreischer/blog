@@ -25,6 +25,7 @@ class MyDocument extends Document {
             `,
             }}
           />
+          <meta content="68063a32bf98d316" name="yandex-verification" />
         </Head>
         <body>
           <Main />
