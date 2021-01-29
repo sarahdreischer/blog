@@ -10,12 +10,12 @@ p {
   line-height: 2rem;
 }
 
-.mail {
-  color: #e29578;
+a {
+  color: #093f48;
 }
 
-.mail:hover {
-  color: #e29578;
+a:hover {
+  color: #093f48;
 }
 
 /* Bootstrap Overrides */
@@ -56,6 +56,14 @@ a.page-link {
 }
 
 /* Custom CSS */
+
+.mail {
+  color: #e29578;
+}
+
+.mail:hover {
+  color: #e29578;
+}
 
 .coming-soon {
   margin-top: 40vh;
