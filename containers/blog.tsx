@@ -19,6 +19,7 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
                 <Card>
                   <Image
                     src={post.imageUrl}
+                    alt={post.title}
                     width={80}
                     height={50}
                     objectFit="cover"

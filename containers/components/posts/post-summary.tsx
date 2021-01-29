@@ -43,6 +43,7 @@ export const PostSummary = ({
       <Row>
         <Col md={5}>
           <Image
+            alt={title}
             src={imageUrl}
             width={100}
             height={65}

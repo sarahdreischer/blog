@@ -28,7 +28,7 @@ const generateOverlays = (sections: FeaturedSection[]) => {
     <OverlayImage
       url={section.imageUrl}
       title={section.title}
-      buttonText="Post coming soon"
+      buttonText="Posts coming soon"
       onButtonClick={() => console.log("Clicked Read more")}
       key={section.title}
     />

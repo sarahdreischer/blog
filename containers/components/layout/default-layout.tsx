@@ -13,6 +13,7 @@ export const AppToolbar = (props) => {
   return (
     <Toolbar className="w-100">
       <Image
+        alt="Software with Sarah"
         src="/logo.svg"
         width={200}
         height={70}
