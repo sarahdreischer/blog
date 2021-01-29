@@ -13,7 +13,7 @@ interface PostSummaryProps {
   paragraph: string;
 }
 
-export const SummarizedPosts = ({ posts }: SummarizedPostsProp) => {
+export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
   return (
     <div className="d-flex flex-column p-3">
       <h4 className="text-left pb-2">Recent Blog Posts</h4>
@@ -43,6 +43,7 @@ export const PostSummary = ({
       <Row>
         <Col md={5}>
           <Image
+            alt={title}
             src={imageUrl}
             width={100}
             height={65}
@@ -51,10 +52,10 @@ export const PostSummary = ({
           />
         </Col>
         <Col md={7}>
-          <h5>{title}</h5>
-          <p>{paragraph}</p>
+          <h4 className="pb-2">{title}</h4>
+          <p style={{ lineHeight: 1.5 }}>{paragraph}</p>
           <Link as={`/blog/${id}`} href={"/blog/[id]"}>
-            <Button variant="outline-info">Read on...</Button>
+            <Button variant="outline-info">Read more...</Button>
           </Link>
         </Col>
       </Row>

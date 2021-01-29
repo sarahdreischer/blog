@@ -1,37 +1,47 @@
-import { Container, Link, Typography } from '@material-ui/core';
+import {
+  Container,
+  Typography,
+  Link as MaterialUILink,
+} from "@material-ui/core";
+import Link from "next/link";
 
-interface FooterProps {
-  title: string;
-  description: string;
-}
+interface FooterProps {}
 
 const Copyright = (props) => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="http://localhost:3000">
-        Software With Sarah
-      </Link>{' '}
+      {"Copyright © "}
+      <Link as="/" href="/">
+        <MaterialUILink color="inherit">Software With Sarah</MaterialUILink>
+      </Link>{" "}
       {new Date().getFullYear()}
-      {'.'}
+      {"."}
     </Typography>
   );
 };
 
-export const Footer = ({ title, description }: FooterProps) => {
+const Contact = (props) => {
+  return (
+    <>
+      <Link as="/about" href="/about">
+        <MaterialUILink color="inherit">Contact me</MaterialUILink>
+      </Link>{" "}
+      for any questions or suggestions.
+    </>
+  );
+};
+
+export const Footer = (props: FooterProps) => {
   return (
     <footer>
-      <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
-          {title}
-        </Typography>
+      <Container maxWidth="lg" className="py-2">
         <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"
           component="p"
         >
-          {description}
+          <Contact />
         </Typography>
         <Copyright />
       </Container>

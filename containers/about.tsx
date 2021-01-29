@@ -8,43 +8,41 @@ export const AboutPage = (props: AboutPageProps) => {
   return (
     <BodyWrapper
       main={
-        <Container>
+        <Container className="about-container">
           <Row>
             <Col md={4} className="d-flex justify-content-center my-auto">
               <Image
-                className="round-img shadow"
+                className="round-img"
                 width={250}
                 height={250}
                 objectFit="cover"
-                layout="fixed"
                 src="/profile.jpeg"
+                alt="Sarah Dreischer"
                 priority
               />
             </Col>
             <Col md={8}>
-              <h1 className="py-4 justify-content-center text-center">
-                About Me
-              </h1>
-              <p className="text-justify">
-                Hi - thank you very much for visiting my blog! I'm Sarah
-                Dreischer, a 24 year old Software Engineer living and working in
-                London, UK. I graduated with an Electrical and Electronics
-                Engineering degree from University College London in 2018 and
-                have since then worked as an Electrical Engineer and Software
-                Engineer. Through work and personal projects I was able to dip
-                my toes into Java SpringBoot, Kubernetes, Cloud, DevOps,
-                Angular, React and NodeJS.
-                <br />
-                <br />
-                This blog was coded from scratch using React for the front-end
-                and NodeJs for the backend. The majority of the blog services
-                are hosted on Kubernetes in the Cloud. If you have any questions
-                on how I put this blog together which I haven't covered in a
-                blog post - feel free to reach out to me.
-                <br />
-                <br />
-                <b>Email:</b> softwarewithsarah@gmail.com
+              <p className="pt-3">
+                <b className="highlight-color">Hello there!</b>
               </p>
+              <p>
+                I'm <b>Sarah Dreischer</b> - a 24 year old Software and
+                Electronic Engineer living and working in London, UK. Since 2019
+                I've been working as a professional Software Engineer and
+                through this blog I am aiming to share with you what I have
+                learned along the way.
+              </p>
+              <p>
+                This blog was coded from scratch using Next.JS (a framework
+                built on top of React) and is deployed on <b>Vercel.com</b>. If
+                you have any questions on how I put this blog together (which I
+                so far haven't covered in a blog post), feel free to contact me
+                using the details below.
+              </p>
+              <b>Contact me on</b>{" "}
+              <a className="mail" href="mailto:softwarewithsarah@gmail.com">
+                softwarewithsarah@gmail.com
+              </a>
             </Col>
           </Row>
         </Container>

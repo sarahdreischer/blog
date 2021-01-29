@@ -13,6 +13,7 @@ export const AppToolbar = (props) => {
   return (
     <Toolbar className="w-100">
       <Image
+        alt="Software with Sarah"
         src="/logo.svg"
         width={200}
         height={70}
@@ -41,10 +42,7 @@ export const AppContainer = ({ Component, pageProps }: DefaultLayoutProps) => {
         <Component {...pageProps} />
       </div>
       <Divider />
-      <Footer
-        title=""
-        description="Contact me for any questions or suggestions."
-      />
+      <Footer />
     </Container>
   );
 };

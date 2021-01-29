@@ -1,9 +1,9 @@
 import { Divider } from "@material-ui/core";
 import { Row } from "react-bootstrap";
-import { Featured } from "./components/featured-sections/featured";
+import { FeaturedSections } from "./components/featured-sections/featured-sections";
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { DefaultPagination } from "./components/layout/default-pagination";
-import { SummarizedPosts } from "./components/posts/summarized";
+import { PostSummaries } from "./components/posts/post-summary";
 
 interface HomepageProps {
   featuredSections: Array<any>;
@@ -22,10 +22,10 @@ export const Homepage = ({
     <BodyWrapper
       main={
         <>
-          <Featured sections={featuredSections} />
+          <FeaturedSections sections={featuredSections} />
           <Divider />
-          <SummarizedPosts posts={posts} />
-          <Row className="float-right pr-2">
+          <PostSummaries posts={posts} />
+          <Row className="float-right mr-1">
             <DefaultPagination
               activePage={activePage}
               maxNumber={maxNumberOfPages}
@@ -35,8 +35,8 @@ export const Homepage = ({
         </>
       }
       sidebar={
-        <div className="flex-column justify-content-center">
-          <h6 className="text-justify">Welcome to Software with Sarah!</h6>
+        <div className="flex-column justify-content-center home-sidebar">
+          <span className="text-center">Welcome to Software with Sarah!</span>
         </div>
       }
     />
