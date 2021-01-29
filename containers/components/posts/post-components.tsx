@@ -15,13 +15,13 @@ export const PostStylingComponents = {
 
 const Heading1 = ({ children }) => {
   return (
-    <h3 className="font-weight-bold heading-color pb-3 pt-2">{children}</h3>
+    <h1 className="h3 font-weight-bold heading-color pb-3 pt-2">{children}</h1>
   );
 };
 
 const Heading2 = ({ children }) => {
   return (
-    <h4 className="font-weight-bold heading-color py-2 ml-4">{children}</h4>
+    <h2 className="h4 font-weight-bold heading-color py-2 ml-4">{children}</h2>
   );
 };
 
