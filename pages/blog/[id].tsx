@@ -6,6 +6,8 @@ import {
   PostStylingComponents,
 } from "containers/components/posts/post-components";
 import { MDXProvider } from "@mdx-js/react";
+import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -29,10 +31,32 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const BlogPost = ({ post }) => {
+  const router = useRouter();
+  const path = `https://softwarewithsarah.com${router.pathname.replace(
+    "[id]",
+    post.id
+  )}`;
+
   return (
-    <MDXProvider components={PostStylingComponents}>
-      <BlogPostPage post={post} />
-    </MDXProvider>
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content={post.summary} name="description" />
+        <meta content={post.keywords} name="keywords" />
+        <meta content="follow, index" name="robots" />
+        <meta content="#ffffff" name="theme-color" />
+        <meta content="#ffffff" name="msapplication-config" />
+        <meta content={post.title} property="og:title" />
+        <meta content={post.summary} property="og:description" />
+        <meta content={path} property="og:url" />
+        <meta content="68063a32bf98d316" name="yandex-verification" />
+      </Head>
+      <MDXProvider components={PostStylingComponents}>
+        <BlogPostPage post={post} />
+      </MDXProvider>
+    </>
   );
 };
 
