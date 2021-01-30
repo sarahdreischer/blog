@@ -94,7 +94,7 @@ a.page-link {
 .body-wrapper-container {
   width: 95vw;
   min-width: 200px;
-  max-width: 1400px;
+  max-width: 2000px;
 }
 
 @media (max-width: 768px) {
