@@ -1,9 +1,10 @@
 .smallImage {
-  height: 200px;
+  min-height: 200px;
+  height: 27vh;
 }
 
 .largeImage {
-  min-height: 200px;
+  min-height: 100px;
 }
 
 @media (max-width: 768px) {
