@@ -55,10 +55,6 @@ a.page-link {
   color: #e29578;
 }
 
-.body-wrapper-container {
-  width: 90%;
-}
-
 /* Custom CSS */
 
 .mail {
@@ -95,9 +91,19 @@ a.page-link {
   margin-bottom: 30vh;
 }
 
+.body-wrapper-container {
+  width: 95vw;
+  min-width: 200px;
+  max-width: 1400px;
+}
+
 @media (max-width: 768px) {
   .home-sidebar,
   .post-sidebar {
     margin-top: 20px;
+  }
+
+  .body-wrapper-container {
+    width: 100vw;
   }
 }
