@@ -57,53 +57,11 @@ a.page-link {
 
 /* Custom CSS */
 
-.mail {
-  color: #e29578;
-}
-
-.mail:hover {
-  color: #e29578;
-}
-
 .coming-soon {
-  margin-top: 40vh;
-  margin-bottom: 40vh;
-}
-
-.round-img {
-  border-radius: 50%;
-}
-
-.summary-img {
-  max-height: 400px;
-}
-
-.home-sidebar {
-  margin-top: 50px;
-}
-
-.post-sidebar {
-  margin-top: 100px;
-}
-
-.about-container {
-  margin-top: 8vh;
+  margin-top: 30vh;
   margin-bottom: 30vh;
 }
 
-.body-wrapper-container {
-  width: 95vw;
-  min-width: 200px;
-  max-width: 2000px;
-}
-
-@media (max-width: 768px) {
-  .home-sidebar,
-  .post-sidebar {
-    margin-top: 20px;
-  }
-
-  .body-wrapper-container {
-    width: 100vw;
-  }
+.round-image {
+  border-radius: 50%;
 }

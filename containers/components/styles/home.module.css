@@ -1,0 +1,9 @@
+.homeSidebar {
+  margin-top: 50px;
+}
+
+@media (max-width: 992px) {
+  .homeSidebar {
+    margin-top: 10px;
+  }
+}

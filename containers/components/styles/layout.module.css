@@ -1,0 +1,11 @@
+.bodyContainer {
+  width: 95vw;
+  min-width: 200px;
+  max-width: 2000px;
+}
+
+@media (max-width: 768px) {
+  .bodyContainer {
+    width: 100vw;
+  }
+}
