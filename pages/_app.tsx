@@ -37,7 +37,10 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta content="Sarah Dreischer" name="author" />
         <meta property="og:locale" content="en_gb" />
-        <meta content="/favicons/favicon.ico" property="og:image" />
+        <meta
+          content="https://softwarewithsarah.com/favicons/favicon.ico"
+          property="og:image"
+        />
       </Head>
       <div className="app">
         <AppToolbar />
