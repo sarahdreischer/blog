@@ -21,7 +21,20 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Software With Sarah</title>
+        <title>Software With Sarah | Easy Software Tutorials</title>
+        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="yandex-verification" content="68063a32bf98d316" />
+        <meta
+          content="A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time."
+          name="description"
+        />
+        <meta
+          content="javascript, js, typescript, ts, react, next.js, esp8266, web development, embedded software, IoT"
+          name="keywords"
+        />
+        <meta content="Sarah Dreischer" name="author" />
       </Head>
       <div className="app">
         <AppToolbar />
