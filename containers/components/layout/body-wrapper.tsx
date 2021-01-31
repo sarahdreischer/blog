@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
+import styles from "../styles/layout.module.css";
 
 interface BodyWrapperProps {
   main: JSX.Element | JSX.Element[];
@@ -21,7 +22,7 @@ export const BodyWrapper = ({ main, sidebar, header }: BodyWrapperProps) => {
 const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
   if (sidebar) {
     return (
-      <Container fluid className="body-wrapper-container">
+      <Container fluid className={styles.bodyContainer}>
         <Row>
           <Col sm={12} lg={9}>
             <div>{main}</div>

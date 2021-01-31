@@ -4,6 +4,7 @@ import { FeaturedSections } from "./components/featured-sections/featured-sectio
 import { BodyWrapper } from "./components/layout/body-wrapper";
 import { DefaultPagination } from "./components/layout/default-pagination";
 import { PostSummaries } from "./components/posts/post-summary";
+import styles from "./components/styles/home.module.css";
 
 interface HomepageProps {
   featuredSections: Array<any>;
@@ -35,8 +36,10 @@ export const Homepage = ({
         </>
       }
       sidebar={
-        <div className="flex-column justify-content-center home-sidebar">
-          <span className="text-center">Welcome to Software with Sarah!</span>
+        <div
+          className={`flex-column justify-content-center text-center ${styles.homeSidebar}`}
+        >
+          <span>Welcome to Software with Sarah!</span>
         </div>
       }
     />

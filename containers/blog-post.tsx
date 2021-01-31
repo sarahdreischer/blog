@@ -3,6 +3,7 @@ import { BodyWrapper } from "./components/layout/body-wrapper";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
 import { PostComponents } from "./components/posts/post-components";
+import styles from "./components/styles/blog-post.module.css";
 import Image from "next/image";
 import moment from "moment";
 
@@ -18,7 +19,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
     <BodyWrapper
       header={
         <Image
-          className="w-100 summary-img"
+          className={`w-100 ${styles.summaryImage}`}
           objectFit="cover"
           height={120}
           width={400}
@@ -36,10 +37,10 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
         </Container>
       }
       sidebar={
-        <Container className="post-sidebar">
+        <Container className={styles.postSidebar}>
           <Row className="justify-content-center">
             <Image
-              className="round-img"
+              className="round-image"
               width={50}
               height={50}
               objectFit="cover"

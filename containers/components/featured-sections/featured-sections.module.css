@@ -4,12 +4,25 @@
 }
 
 .largeImage {
-  min-height: 100px;
+  min-height: 200px;
 }
 
+/* Tablet Size */
+@media (max-width: 992px) {
+  .smallImage {
+    height: 25vh;
+  }
+}
+
+/* Phone Size */
 @media (max-width: 768px) {
   .largeImage {
-    margin-bottom: 10px;
+    height: 25vh;
     padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .smallImage {
+    height: 25vh;
   }
 }

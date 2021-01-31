@@ -1,0 +1,13 @@
+.postSidebar {
+  margin-top: 100px;
+}
+
+.summaryImage {
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .postSidebar {
+    margin-top: 10px;
+  }
+}
