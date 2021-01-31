@@ -14,10 +14,6 @@ class MyDocument extends Document {
         <Head>
           {getFaviconLinks()}
           {enableGoogleAnalytics()}
-          <meta charSet="utf-8" />
-          <meta content="width=device-width, initial-scale=1" name="viewport" />
-          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-          <meta name="yandex-verification" content="68063a32bf98d316" />
         </Head>
         <body>
           <Main />
