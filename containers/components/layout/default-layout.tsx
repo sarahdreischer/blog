@@ -14,9 +14,9 @@ export const AppToolbar = (props) => {
     <Toolbar className="w-100">
       <Image
         alt="Software with Sarah"
-        src="/logo.svg"
+        src="/logo.png"
         width={200}
-        height={70}
+        height={36}
         objectFit="contain"
         priority
       />
