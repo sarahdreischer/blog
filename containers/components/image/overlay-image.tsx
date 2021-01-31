@@ -8,6 +8,7 @@ interface OverlayImageProps {
   buttonText: string;
   onButtonClick: () => void;
   className?: string;
+  invertedOverlay?: boolean;
 }
 
 export const OverlayImage = ({
@@ -16,6 +17,7 @@ export const OverlayImage = ({
   buttonText,
   onButtonClick,
   className,
+  invertedOverlay,
 }: OverlayImageProps) => {
   return (
     <div className={`${styles.imageContainer} ${className}`}>
@@ -27,7 +29,9 @@ export const OverlayImage = ({
         layout="fill"
         priority
       />
-      <div className={styles.overlay}>
+      <div
+        className={invertedOverlay ? styles.invertedOverlay : styles.overlay}
+      >
         <Container className="h-75">
           <Row className="h-100 justify-content-center align-items-center">
             <div className={`text-white ${styles.overlayTextSize}`}>
