@@ -1,6 +1,7 @@
 import { getNumberOfPostPages, getPostsInRange } from "../lib/api/posts";
 import { Homepage } from "../containers/home";
 import { FeaturedSection } from "lib/types/featured-section";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
   return {
@@ -28,13 +29,26 @@ const featuredSections: FeaturedSection[] = [
 ];
 
 const Home = ({ posts, activePage, numberOfPages }) => {
+  const pageTitle = "Software With Sarah | Simple Software Tutorials";
+  const pagePath = "https://softwarewithsarah.com";
+  const pageDescription =
+    "A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time.";
+
   return (
-    <Homepage
-      activePage={activePage}
-      featuredSections={featuredSections}
-      posts={posts}
-      numberOfPages={numberOfPages}
-    />
+    <>
+      <Head>
+        <meta content={pageTitle} property="og:title" />
+        <meta content={pageDescription} property="og:description" />
+        <meta content={pagePath} property="og:url" />
+        <meta content="blog" property="og:type" />
+      </Head>
+      <Homepage
+        activePage={activePage}
+        featuredSections={featuredSections}
+        posts={posts}
+        numberOfPages={numberOfPages}
+      />
+    </>
   );
 };
 

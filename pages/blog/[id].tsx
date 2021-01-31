@@ -32,7 +32,7 @@ export const getStaticProps = async ({ params }) => {
 
 const BlogPost = ({ post }) => {
   const router = useRouter();
-  const path = `https://softwarewithsarah.com${router.pathname.replace(
+  const pagePath = `https://softwarewithsarah.com${router.pathname.replace(
     "[id]",
     post.id
   )}`;
@@ -46,9 +46,13 @@ const BlogPost = ({ post }) => {
         <meta content="follow, index" name="robots" />
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-config" />
-        <meta content={post.title} property="og:title" />
+        <meta content="article" property="og:type" />
+        <meta
+          content={`${post.title} | Software With Sarah`}
+          property="og:title"
+        />
         <meta content={post.summary} property="og:description" />
-        <meta content={path} property="og:url" />
+        <meta content={pagePath} property="og:url" />
       </Head>
       <MDXProvider components={PostStylingComponents}>
         <BlogPostPage post={post} />
