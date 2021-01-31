@@ -32,7 +32,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         <meta name="yandex-verification" content="68063a32bf98d316" />
         <meta content={pageDescription} name="description" />
         <meta
-          content="javascript, js, typescript, ts, react, next.js, esp8266, web development, embedded software, IoT"
+          content="software, javascript, js, typescript, ts, react, next.js, esp8266, web development, embedded software, IoT, software with sarah, softwarewithsarah"
           name="keywords"
         />
         <meta content="Sarah Dreischer" name="author" />
