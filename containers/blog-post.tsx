@@ -1,9 +1,9 @@
 import { Container, Row } from "react-bootstrap";
-import { BodyWrapper } from "./components/layout/body-wrapper";
+import { Body } from "./components/layout/body";
 import { Post } from "../lib/types/post";
 import hydrate from "next-mdx-remote/hydrate";
-import { PostComponents } from "./components/posts/post-components";
-import styles from "./components/styles/blog-post.module.css";
+import { WrappedComponents } from "./components/posts/post-components";
+import styles from "./styles/blog-post.module.css";
 import Image from "next/image";
 import moment from "moment";
 
@@ -12,11 +12,11 @@ interface BlogPostPageProps {
 }
 
 export const BlogPostPage = ({ post }: BlogPostPageProps) => {
-  const content = hydrate(post.content, { components: PostComponents });
+  const content = hydrate(post.content, { components: WrappedComponents });
   const postDate = moment(new Date(post.createdAt)).format("DD/MM/YYYY");
 
   return (
-    <BodyWrapper
+    <Body
       header={
         <Image
           className={`w-100 ${styles.summaryImage}`}

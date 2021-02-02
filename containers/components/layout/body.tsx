@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import styles from "../styles/layout.module.css";
+import styles from "../../styles/layout.module.css";
 
 interface BodyWrapperProps {
   main: JSX.Element | JSX.Element[];
@@ -7,16 +7,13 @@ interface BodyWrapperProps {
   header?: JSX.Element;
 }
 
-export const BodyWrapper = ({ main, sidebar, header }: BodyWrapperProps) => {
-  if (header) {
-    return (
-      <>
-        {renderHeader(header)}
-        {renderMainContainer({ main, sidebar })}
-      </>
-    );
-  }
-  return renderMainContainer({ main, sidebar });
+export const Body = ({ main, sidebar, header }: BodyWrapperProps) => {
+  return (
+    <>
+      {<div className="h-25 overflow-hidden px-0">{header}</div> || null}
+      {renderMainContainer({ main, sidebar })}
+    </>
+  );
 };
 
 const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
@@ -35,8 +32,4 @@ const renderMainContainer = ({ main, sidebar }: BodyWrapperProps) => {
     );
   }
   return <div className="pt-2">{main}</div>;
-};
-
-const renderHeader = (header: JSX.Element) => {
-  return <div className="h-25 overflow-hidden px-0">{header}</div>;
 };

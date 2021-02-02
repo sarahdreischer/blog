@@ -1,8 +1,7 @@
-import { getNumberOfPostPages, getPostsInRange } from "../lib/api/posts";
-import { Homepage } from "../containers/home";
-import { FeaturedSection } from "lib/types/featured-section";
 import Head from "next/head";
+import { getNumberOfPostPages, getPostsInRange } from "../lib/api/posts";
 import { getOGTags, DefaultBlogMeta, PageTitle } from "lib/seo/meta-tags";
+import { Homepage } from "../containers/home";
 
 export const getStaticProps = async () => {
   return {

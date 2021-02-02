@@ -8,7 +8,7 @@ interface DefaultPaginationProps {
   visibleRange: number;
 }
 
-export const DefaultPagination = ({
+export const CustomPagination = ({
   maxNumber,
   activePage,
   visibleRange,

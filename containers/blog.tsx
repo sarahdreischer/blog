@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Row, Col, Container, Card } from "react-bootstrap";
-import { BodyWrapper } from "./components/layout/body-wrapper";
+import { Body } from "./components/layout/body";
 import { Post } from "../lib/types/post";
 
 interface BlogPageProps {
@@ -10,7 +10,7 @@ interface BlogPageProps {
 
 export const BlogPage = ({ posts }: BlogPageProps) => {
   return (
-    <BodyWrapper
+    <Body
       main={
         <Container>
           <Row>

@@ -1,18 +1,26 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { BodyWrapper } from "./components/layout/body-wrapper";
+import { Body } from "./components/layout/body";
 import Image from "next/image";
-import styles from "./components/styles/about.module.css";
+import styles from "./styles/about.module.css";
 
 interface AboutPageProps {}
 
 export const AboutPage = (props: AboutPageProps) => {
   return (
-    <BodyWrapper
+    <Body
       main={
         <Container className={styles.aboutContainer}>
           <Row>
             <Col md={4} className="d-flex justify-content-center my-auto">
-              <AboutMeImage />
+              <Image
+                className="round-image"
+                width={250}
+                height={250}
+                objectFit="cover"
+                src="/profile.jpeg"
+                alt="Sarah Dreischer"
+                priority
+              />
             </Col>
             <Col md={8}>
               <AboutMeDescription />
@@ -20,20 +28,6 @@ export const AboutPage = (props: AboutPageProps) => {
           </Row>
         </Container>
       }
-    />
-  );
-};
-
-const AboutMeImage = (props) => {
-  return (
-    <Image
-      className="round-image"
-      width={250}
-      height={250}
-      objectFit="cover"
-      src="/profile.jpeg"
-      alt="Sarah Dreischer"
-      priority
     />
   );
 };

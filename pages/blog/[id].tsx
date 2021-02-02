@@ -1,13 +1,13 @@
+import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 import { getAllSortedPosts, getPostById } from "../../lib/api/posts";
 import { BlogPostPage } from "../../containers/blog-post";
 import renderToString from "next-mdx-remote/render-to-string";
 import {
-  PostComponents,
-  PostStylingComponents,
+  WrappedComponents,
+  StylingComponents,
 } from "containers/components/posts/post-components";
 import { MDXProvider } from "@mdx-js/react";
-import Head from "next/head";
-import { useRouter } from "next/dist/client/router";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const post = getPostById(params.id);
   const mdxContent = await renderToString(post.content, {
-    components: PostComponents,
+    components: WrappedComponents,
   });
   return {
     props: {
@@ -54,7 +54,7 @@ const BlogPost = ({ post }) => {
         <meta content={post.summary} property="og:description" />
         <meta content={pagePath} property="og:url" />
       </Head>
-      <MDXProvider components={PostStylingComponents}>
+      <MDXProvider components={StylingComponents}>
         <BlogPostPage post={post} />
       </MDXProvider>
     </>

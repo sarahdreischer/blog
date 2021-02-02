@@ -1,5 +1,5 @@
-import { PageTitle, DefaultBlogMeta, getOGTags } from "lib/seo/meta-tags";
 import Head from "next/head";
+import { PageTitle, DefaultBlogMeta, getOGTags } from "lib/seo/meta-tags";
 import { AboutPage } from "../containers/about";
 
 const About = () => {
