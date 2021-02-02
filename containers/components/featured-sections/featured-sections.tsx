@@ -1,5 +1,5 @@
 import { Col, Row } from "react-bootstrap";
-import { OverlayImage } from "../image/overlay-image";
+import { OverlayImage } from "../overlay-image/overlay-image";
 import styles from "./featured-sections.module.css";
 
 interface FeaturedProps {}
@@ -9,7 +9,7 @@ export const FeaturedSections = (props: FeaturedProps) => {
 
   return (
     <Row className="p-3 h-100">
-      <Col className={styles.largeImage} md={8}>
+      <Col className={`${styles.largeImage} pl-0`} md={8}>
         <OverlayImage
           url="/featured-sections/image-1.jpeg"
           title="Create a blog with Next.JS"

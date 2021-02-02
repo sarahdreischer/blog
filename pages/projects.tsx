@@ -1,5 +1,5 @@
-import { getOGTags, PageTitle, DefaultBlogMeta } from "lib/seo/meta-tags";
 import Head from "next/head";
+import { getOGTags, PageTitle, DefaultBlogMeta } from "lib/seo/meta-tags";
 
 const Projects = (props) => {
   return (

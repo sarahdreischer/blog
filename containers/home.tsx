@@ -1,10 +1,10 @@
 import { Divider } from "@material-ui/core";
 import { Row } from "react-bootstrap";
 import { FeaturedSections } from "./components/featured-sections/featured-sections";
-import { BodyWrapper } from "./components/layout/body-wrapper";
-import { DefaultPagination } from "./components/layout/default-pagination";
+import { Body } from "./components/layout/body";
+import { CustomPagination } from "./components/pagination/custom-pagination";
 import { PostSummaries } from "./components/posts/post-summary";
-import styles from "./components/styles/home.module.css";
+import styles from "./styles/home.module.css";
 
 interface HomepageProps {
   posts: Array<any>;
@@ -18,14 +18,14 @@ export const Homepage = ({
   numberOfPages: maxNumberOfPages,
 }: HomepageProps) => {
   return (
-    <BodyWrapper
+    <Body
       main={
         <>
           <FeaturedSections />
           <Divider />
           <PostSummaries posts={posts} />
           <Row className="float-right mr-1">
-            <DefaultPagination
+            <CustomPagination
               activePage={activePage}
               maxNumber={maxNumberOfPages}
               visibleRange={5}

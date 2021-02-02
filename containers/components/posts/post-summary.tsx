@@ -17,7 +17,7 @@ export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
   return (
     <div className="d-flex flex-column p-3">
       <h4 className="text-left pb-2">Recent Blog Posts</h4>
-      <div className="px-2">
+      <div className="px-1">
         {posts.map((post) => (
           <PostSummary
             id={post.id}

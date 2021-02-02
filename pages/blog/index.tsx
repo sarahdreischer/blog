@@ -1,7 +1,7 @@
 import Head from "next/head";
+import { DefaultBlogMeta, getOGTags, PageTitle } from "lib/seo/meta-tags";
 import { getAllSortedPosts } from "../../lib/api/posts";
 import { BlogPage } from "../../containers/blog";
-import { DefaultBlogMeta, getOGTags, PageTitle } from "lib/seo/meta-tags";
 
 export const getStaticProps = async () => {
   const posts = getAllSortedPosts();

@@ -3,9 +3,9 @@ import theme from "prism-react-renderer/themes/nightOwlLight";
 import styles from "./post-components.module.css";
 import Image from "next/image";
 
-export const PostComponents = { Image };
+export const WrappedComponents = { Image };
 
-export const PostStylingComponents = {
+export const StylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
   h2: ({ children }) => <Heading2 children={children} />,
   p: (props) => <Paragraph {...props} />,
