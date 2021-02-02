@@ -2,6 +2,7 @@ import { getNumberOfPostPages, getPostsInRange } from "../lib/api/posts";
 import { Homepage } from "../containers/home";
 import { FeaturedSection } from "lib/types/featured-section";
 import Head from "next/head";
+import { getOGTags, DefaultBlogMeta, PageTitle } from "lib/seo/meta-tags";
 
 export const getStaticProps = async () => {
   return {
@@ -16,31 +17,27 @@ export const getStaticProps = async () => {
 const featuredSections: FeaturedSection[] = [
   {
     title: "Create a blog with Next.JS",
-    imageUrl: "/featured-image-1.jpeg",
+    imageUrl: "/featured-sections/image-1.jpeg",
   },
   {
     title: "Tutorials",
-    imageUrl: "/featured-image-2.jpeg",
+    imageUrl: "/featured-sections/image-2.jpeg",
   },
   {
     title: "Projects",
-    imageUrl: "/featured-image-3.jpeg",
+    imageUrl: "/featured-sections/image-3.jpeg",
   },
 ];
 
 const Home = ({ posts, activePage, numberOfPages }) => {
-  const pageTitle = "Software With Sarah | Simple Software Tutorials";
-  const pagePath = "https://softwarewithsarah.com";
-  const pageDescription =
-    "A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time.";
-
   return (
     <>
       <Head>
-        <meta content={pageTitle} property="og:title" />
-        <meta content={pageDescription} property="og:description" />
-        <meta content={pagePath} property="og:url" />
-        <meta content="blog" property="og:type" />
+        {getOGTags(
+          PageTitle.HOME,
+          DefaultBlogMeta.DESCRIPTION,
+          DefaultBlogMeta.URL
+        )}
       </Head>
       <Homepage
         activePage={activePage}
