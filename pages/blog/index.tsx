@@ -1,7 +1,6 @@
-import Head from "next/head";
 import { getAllSortedPosts } from "../../lib/api/posts";
 import { BlogPage } from "../../containers/blog";
-import { DefaultBlogMeta, getOGTags, PageTitle } from "lib/seo/meta-tags";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
   const posts = getAllSortedPosts();
@@ -13,15 +12,19 @@ export const getStaticProps = async () => {
 };
 
 const Blog = ({ posts }) => {
+  const pageTitle = "Software With Sarah | Blog";
+  const pagePath = "https://softwarewithsarah.com/blog";
+  const pageDescription =
+    "A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time.";
+
   return (
     <>
       <Head>
-        <title>{PageTitle.BLOG}</title>
-        {getOGTags(
-          PageTitle.BLOG,
-          DefaultBlogMeta.DESCRIPTION,
-          DefaultBlogMeta.URL + "/blog"
-        )}
+        <title>{pageTitle}</title>
+        <meta content={pageTitle} property="og:title" />
+        <meta content={pageDescription} property="og:description" />
+        <meta content={pagePath} property="og:url" />
+        <meta content="blog" property="og:type" />
       </Head>
       <BlogPage posts={posts} />
     </>
