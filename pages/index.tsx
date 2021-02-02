@@ -14,21 +14,6 @@ export const getStaticProps = async () => {
   };
 };
 
-const featuredSections: FeaturedSection[] = [
-  {
-    title: "Create a blog with Next.JS",
-    imageUrl: "/featured-sections/image-1.jpeg",
-  },
-  {
-    title: "Tutorials",
-    imageUrl: "/featured-sections/image-2.jpeg",
-  },
-  {
-    title: "Projects",
-    imageUrl: "/featured-sections/image-3.jpeg",
-  },
-];
-
 const Home = ({ posts, activePage, numberOfPages }) => {
   return (
     <>
@@ -41,7 +26,6 @@ const Home = ({ posts, activePage, numberOfPages }) => {
       </Head>
       <Homepage
         activePage={activePage}
-        featuredSections={featuredSections}
         posts={posts}
         numberOfPages={numberOfPages}
       />

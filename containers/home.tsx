@@ -7,14 +7,12 @@ import { PostSummaries } from "./components/posts/post-summary";
 import styles from "./components/styles/home.module.css";
 
 interface HomepageProps {
-  featuredSections: Array<any>;
   posts: Array<any>;
   activePage: number;
   numberOfPages: number;
 }
 
 export const Homepage = ({
-  featuredSections,
   posts,
   activePage,
   numberOfPages: maxNumberOfPages,
@@ -23,7 +21,7 @@ export const Homepage = ({
     <BodyWrapper
       main={
         <>
-          <FeaturedSections sections={featuredSections} />
+          <FeaturedSections />
           <Divider />
           <PostSummaries posts={posts} />
           <Row className="float-right mr-1">

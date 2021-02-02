@@ -7,7 +7,6 @@ interface OverlayImageProps {
   url: string;
   buttonText: string;
   onButtonClick: () => void;
-  className?: string;
   invertedOverlay?: boolean;
 }
 
@@ -16,19 +15,11 @@ export const OverlayImage = ({
   url,
   buttonText,
   onButtonClick,
-  className,
   invertedOverlay,
 }: OverlayImageProps) => {
   return (
-    <div className={`${styles.imageContainer} ${className}`}>
-      <Image
-        src={url}
-        alt={title}
-        key={title}
-        objectFit="cover"
-        layout="fill"
-        priority
-      />
+    <div className={styles.imageContainer}>
+      <Image src={url} alt={title} objectFit="cover" layout="fill" priority />
       <div
         className={invertedOverlay ? styles.invertedOverlay : styles.overlay}
       >

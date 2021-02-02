@@ -1,7 +1,7 @@
-import { Button, Divider, Toolbar } from "@material-ui/core";
+import { Divider, Toolbar } from "@material-ui/core";
 import { NextComponentType, NextPageContext } from "next";
 import Image from "next/image";
-import { Container, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Footer } from "./footer";
 
 interface DefaultLayoutProps {
@@ -14,7 +14,7 @@ export const AppToolbar = (props) => {
     <Toolbar className="w-100">
       <Image
         alt="Software with Sarah"
-        src="/logo.png"
+        src="/logo/logo-min.svg"
         width={200}
         height={36}
         objectFit="contain"
