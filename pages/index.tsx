@@ -17,15 +17,15 @@ export const getStaticProps = async () => {
 const featuredSections: FeaturedSection[] = [
   {
     title: "Create a blog with Next.JS",
-    imageUrl: "/featured-image-1.jpeg",
+    imageUrl: "/featured-sections/image-1.jpeg",
   },
   {
     title: "Tutorials",
-    imageUrl: "/featured-image-2.jpeg",
+    imageUrl: "/featured-sections/image-2.jpeg",
   },
   {
     title: "Projects",
-    imageUrl: "/featured-image-3.jpeg",
+    imageUrl: "/featured-sections/image-3.jpeg",
   },
 ];
 

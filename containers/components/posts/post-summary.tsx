@@ -45,10 +45,9 @@ export const PostSummary = ({
           <Image
             alt={title}
             src={imageUrl}
-            width={100}
-            height={65}
+            width={485}
+            height={298}
             objectFit="cover"
-            layout="responsive"
           />
         </Col>
         <Col md={7}>
