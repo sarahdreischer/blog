@@ -1,13 +1,10 @@
 import { Col, Row } from "react-bootstrap";
-import { FeaturedSection } from "../../../lib/types/featured-section";
 import { OverlayImage } from "../image/overlay-image";
 import styles from "./featured-sections.module.css";
 
-interface FeaturedProps {
-  sections: FeaturedSection[];
-}
+interface FeaturedProps {}
 
-export const FeaturedSections = ({ sections }: FeaturedProps) => {
+export const FeaturedSections = (props: FeaturedProps) => {
   const onButtonClick = () => console.log("Clicked Read more");
 
   return (
