@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import styles from "../styles/layout.module.css";
+import styles from "../../styles/layout.module.css";
 
 interface BodyWrapperProps {
   main: JSX.Element | JSX.Element[];

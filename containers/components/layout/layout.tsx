@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Divider, Toolbar } from "@material-ui/core";
 import { NextComponentType, NextPageContext } from "next";
-import Image from "next/image";
 import { Container } from "react-bootstrap";
 import { Footer } from "./footer";
 import { BlogNavbar, Page } from "./navbar";
