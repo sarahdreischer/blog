@@ -11,6 +11,7 @@ export const StylingComponents = {
   p: (props) => <Paragraph {...props} />,
   "p.inlineCode": (props) => <InlineCode {...props} />,
   pre: ({ children }) => <CodeBlock children={children} />,
+  personal: (props) => <Personal {...props} />,
 };
 
 const Heading1 = ({ children }) => {
@@ -30,6 +31,16 @@ const Paragraph = (props) => {
     <p
       className={`text-justify ${styles.fontSize}`}
       style={{ lineHeight: 2.3 }}
+      {...props}
+    />
+  );
+};
+
+const Personal = (props) => {
+  return (
+    <p
+      className={`text-justify ${styles.fontSize}`}
+      style={{ lineHeight: 1.9 }}
       {...props}
     />
   );
