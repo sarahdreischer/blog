@@ -1,5 +1,6 @@
 import { Divider } from "@material-ui/core";
-import { Row } from "react-bootstrap";
+import Image from "next/image";
+import { Container, Row } from "react-bootstrap";
 import { FeaturedSections } from "./components/featured-sections/featured-sections";
 import { Body } from "./components/layout/body";
 import { CustomPagination } from "./components/pagination/custom-pagination";
@@ -34,11 +35,32 @@ export const Homepage = ({
         </>
       }
       sidebar={
-        <div
-          className={`flex-column justify-content-center text-center ${styles.homeSidebar}`}
-        >
-          <span>Welcome to Software with Sarah!</span>
-        </div>
+        <Container className={styles.homeSidebar}>
+          <Row className="justify-content-center">
+            <Image
+              className="round-image"
+              width={50}
+              height={50}
+              objectFit="cover"
+              src="/profile.jpeg"
+              alt="Programming Blog, Simple Software Tutorials"
+              priority
+            />
+          </Row>
+          <Row className="p-3">
+            <span>
+              <div className="text-center">
+                <b className="heading-color">Hello!</b>
+              </div>
+              <br />
+              <div className="text-justify">
+                Welcome to my personal blog in which I am sharing with you all I
+                have learned so far as a Full-Stack Software Developer through
+                simple tutorials. Enjoy!
+              </div>
+            </span>
+          </Row>
+        </Container>
       }
     />
   );
