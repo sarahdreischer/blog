@@ -21,6 +21,11 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         />
         <meta content="#ffffff" name="theme-color" />
         <meta content="#ffffff" name="msapplication-config" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://softwarewithsarah.com/favicons/favicon.ico"
+        />
       </Head>
       <div className="app">
         <main>

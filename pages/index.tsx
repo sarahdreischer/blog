@@ -17,7 +17,7 @@ const Home = ({ posts, activePage, numberOfPages }) => {
   return (
     <>
       <Head>
-        <title>Software With Sarah | Programming Blog</title>
+        <title>Programming Blog | Simple Tutorials</title>
         <meta
           content="A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time."
           name="description"
@@ -27,7 +27,7 @@ const Home = ({ posts, activePage, numberOfPages }) => {
           name="keywords"
         />
         {getOGTags(
-          "Software With Sarah | Programming Blog",
+          "Programming Blog | Simple Tutorials",
           "A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time.",
           ROOT_LINK
         )}
