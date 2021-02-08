@@ -3,13 +3,5 @@ module.exports = {
   changefreq: "weekly",
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-  },
-  exclude: ["/pages/page/*"],
+  exclude: ["/page/*"],
 };
