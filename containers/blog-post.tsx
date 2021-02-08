@@ -45,7 +45,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
               height={50}
               objectFit="cover"
               src="/profile.jpeg"
-              alt="Sarah Dreischer"
+              alt={`Published by Sarah Dreischer, ${post.title}`}
               priority
             />
           </Row>

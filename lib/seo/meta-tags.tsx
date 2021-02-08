@@ -1,15 +1,4 @@
-export enum PageTitle {
-  HOME = "Software With Sarah | Simple Software Tutorials",
-  PROJECTS = "Software With Sarah | Projects",
-  BLOG = "Software With Sarah | Blog",
-  ABOUT = "Software With Sarah | About",
-}
-
-export enum DefaultBlogMeta {
-  DESCRIPTION = "A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time.",
-  URL = "https://softwarewithsarah.com",
-  TITLE_PREFIX = "Software With Sarah | ",
-}
+export const ROOT_LINK = "https://softwarewithsarah.com";
 
 export const getOGTags = (
   title: string,

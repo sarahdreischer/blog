@@ -22,7 +22,7 @@ export const Layout = ({ Component, pageProps }: DefaultLayoutProps) => {
     <>
       <Toolbar className="w-100">
         <Image
-          alt="Software with Sarah"
+          alt="Programming Blog | Software with Sarah"
           src="/logo/logo-min.svg"
           width={200}
           height={36}
