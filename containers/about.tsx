@@ -18,7 +18,7 @@ export const AboutPage = (props: AboutPageProps) => {
                 height={250}
                 objectFit="cover"
                 src="/profile.jpeg"
-                alt="Sarah Dreischer"
+                alt="Programming Blog, Sarah Dreischer"
                 priority
               />
             </Col>

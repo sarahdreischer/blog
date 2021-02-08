@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { DefaultBlogMeta, getOGTags, PageTitle } from "lib/seo/meta-tags";
+import { getOGTags, ROOT_LINK } from "lib/seo/meta-tags";
 import { getAllSortedPosts } from "../../lib/api/posts";
 import { BlogPage } from "../../containers/blog";
 
@@ -16,12 +16,13 @@ const Blog = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>{PageTitle.BLOG}</title>
+        <title>Software With Sarah | Blog</title>
         {getOGTags(
-          PageTitle.BLOG,
-          DefaultBlogMeta.DESCRIPTION,
-          DefaultBlogMeta.URL + "/blog"
+          "Software With Sarah | Blog",
+          "A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time.",
+          `${ROOT_LINK}/blog`
         )}
+        <link rel="canonical" href={`${ROOT_LINK}/blog`} />
       </Head>
       <BlogPage posts={posts} />
     </>
