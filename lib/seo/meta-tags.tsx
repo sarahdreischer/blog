@@ -1,11 +1,12 @@
 export const ROOT_LINK = "https://softwarewithsarah.com";
 
-export const getOGTags = (
+export const getOpenGraphTags = (
   title: string,
   description: string,
-  route: string,
+  subRoute: string = "",
   type: string = "blog"
 ) => {
+  const route = subRoute === "" ? ROOT_LINK : `${ROOT_LINK}/${subRoute}`;
   return (
     <>
       <meta content={title} property="og:title" />
