@@ -16,7 +16,7 @@ interface PostSummaryProps {
 export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
   return (
     <div className="d-flex flex-column p-3">
-      <h4 className="text-left pb-2">Recent Blog Posts</h4>
+      <h1 className="h4 text-left pb-2">Recent Blog Posts</h1>
       <div className="px-1">
         {posts.map((post) => (
           <PostSummary

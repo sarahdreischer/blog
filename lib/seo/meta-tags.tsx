@@ -1,22 +1,12 @@
-export enum PageTitle {
-  HOME = "Software With Sarah | Simple Software Tutorials",
-  PROJECTS = "Software With Sarah | Projects",
-  BLOG = "Software With Sarah | Blog",
-  ABOUT = "Software With Sarah | About",
-}
+export const ROOT_LINK = "https://softwarewithsarah.com";
 
-export enum DefaultBlogMeta {
-  DESCRIPTION = "A blog to guide aspiring developers through the jungle of technology through easy tutorials and projects for your free time.",
-  URL = "https://softwarewithsarah.com",
-  TITLE_PREFIX = "Software With Sarah | ",
-}
-
-export const getOGTags = (
+export const getOpenGraphTags = (
   title: string,
   description: string,
-  route: string,
+  subRoute: string = "",
   type: string = "blog"
 ) => {
+  const route = subRoute === "" ? ROOT_LINK : `${ROOT_LINK}/${subRoute}`;
   return (
     <>
       <meta content={title} property="og:title" />

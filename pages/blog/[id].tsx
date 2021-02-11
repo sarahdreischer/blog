@@ -8,6 +8,7 @@ import {
   StylingComponents,
 } from "containers/components/posts/post-components";
 import { MDXProvider } from "@mdx-js/react";
+import { ROOT_LINK } from "lib/seo/meta-tags";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -32,10 +33,7 @@ export const getStaticProps = async ({ params }) => {
 
 const BlogPost = ({ post }) => {
   const router = useRouter();
-  const pagePath = `https://softwarewithsarah.com${router.pathname.replace(
-    "[id]",
-    post.id
-  )}`;
+  const pagePath = `${ROOT_LINK}${router.pathname.replace("[id]", post.id)}`;
 
   return (
     <>
@@ -43,9 +41,6 @@ const BlogPost = ({ post }) => {
         <title>{post.title}</title>
         <meta content={post.summary} name="description" />
         <meta content={post.keywords} name="keywords" />
-        <meta content="follow, index" name="robots" />
-        <meta content="#ffffff" name="theme-color" />
-        <meta content="#ffffff" name="msapplication-config" />
         <meta content="article" property="og:type" />
         <meta
           content={`${post.title} | Software With Sarah`}
@@ -53,6 +48,7 @@ const BlogPost = ({ post }) => {
         />
         <meta content={post.summary} property="og:description" />
         <meta content={pagePath} property="og:url" />
+        <link rel="canonical" href={pagePath} />
       </Head>
       <MDXProvider components={StylingComponents}>
         <BlogPostPage post={post} />
