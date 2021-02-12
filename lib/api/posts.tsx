@@ -17,7 +17,7 @@ export const getPostsInRange = (start: number, end: number) => {
 };
 
 export const getNumberOfPostPages = (numPerPage: number) => {
-  const posts = getAllPosts();
+  const posts = getAllSortedPosts();
   return Math.ceil(posts.length / numPerPage);
 };
 
