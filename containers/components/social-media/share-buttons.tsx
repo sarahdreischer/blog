@@ -14,7 +14,7 @@ export const ShareButtons = ({ title }: ShareButtonsProps) => {
   const router = useRouter();
   const rawUrl = `https://softwarewithsarah.com${router.asPath}`;
   const parsedUrl = rawUrl.replace(/:/g, "%3A").replace(/\//g, "%2F");
-  const parsedTitle = title.replaceAll(/\s/g, "%20");
+  const parsedTitle = title.replace(/\s/g, "%20");
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${parsedUrl}&text=${parsedTitle}`;
   const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${parsedUrl}`;
