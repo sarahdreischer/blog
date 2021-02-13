@@ -11,9 +11,8 @@ interface ShareButtonsProps {
 }
 
 export const ShareButtons = ({ route, title }: ShareButtonsProps) => {
-  const parsedUrl = `https://softwarewithsarah.com/${route}`
-    .replaceAll(":", "%3A")
-    .replaceAll("/", "%2F");
+  const rawUrl = `https://softwarewithsarah.com/${route}`;
+  const parsedUrl = rawUrl.replaceAll(":", "%3A").replaceAll("/", "%2F");
   const parsedTitle = title.replaceAll(" ", "%20");
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${parsedUrl}&text=${parsedTitle}`;
