@@ -23,25 +23,33 @@ export const ShareButtons = ({ title }: ShareButtonsProps) => {
 
   return (
     <div className="d-flex justify-content-around w-100">
-      <Link as={twitterLink} href={twitterLink}>
-        <button className={styles.button}>
-          <TwitterIcon />
-        </button>
+      <Link href={twitterLink} passHref={true}>
+        <a target="_blank" rel="noreferrer">
+          <button className={styles.button} aria-label="Twitter Share Button">
+            <TwitterIcon />
+          </button>
+        </a>
       </Link>
-      <Link as={facebookLink} href={facebookLink}>
-        <button className={styles.button}>
-          <FacebookIcon />
-        </button>
+      <Link href={facebookLink} passHref={true}>
+        <a target="_blank" rel="noreferrer">
+          <button className={styles.button} aria-label="Facebook Share Button">
+            <FacebookIcon />
+          </button>
+        </a>
       </Link>
-      <Link as={pinterestLink} href={pinterestLink}>
-        <button className={styles.button}>
-          <PinterestIcon />
-        </button>
+      <Link href={pinterestLink} passHref={true}>
+        <a target="_blank" rel="noreferrer">
+          <button className={styles.button} aria-label="Pinterest Share Button">
+            <PinterestIcon />
+          </button>
+        </a>
       </Link>
-      <Link as={linkedInLink} href={linkedInLink}>
-        <button className={styles.button}>
-          <LinkedInIcon />
-        </button>
+      <Link href={linkedInLink} passHref={true}>
+        <a target="_blank" rel="noreferrer">
+          <button className={styles.button} aria-label="LinkedIn Share Button">
+            <LinkedInIcon />
+          </button>
+        </a>
       </Link>
     </div>
   );
