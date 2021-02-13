@@ -8,12 +8,18 @@ interface OverlayImageProps {
   imageUrl: string;
 }
 
-export const OverlayImage = ({ title, imageUrl: url }: OverlayImageProps) => {
+export const OverlayImage = ({ title, imageUrl }: OverlayImageProps) => {
   return (
     <div className={styles.imageContainer}>
-      <Image src={url} alt={title} objectFit="cover" layout="fill" priority />
+      <Image
+        src={imageUrl}
+        alt={title}
+        objectFit="cover"
+        layout="fill"
+        priority
+      />
       <Container className="h-100 justify-content-center align-items-center">
-        <Row className="h-100 justify-content-center align-items-center">
+        <Row className="h-75 justify-content-center align-items-end">
           <button
             className={`d-flex align-items-center text-white px-1 ${styles.imageTitle}`}
           >
