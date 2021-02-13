@@ -23,7 +23,7 @@ export const OverlayImage = ({ title, imageUrl }: OverlayImageProps) => {
           <button
             className={`d-flex align-items-center text-white px-1 ${styles.imageTitle}`}
           >
-            {title} <ArrowForwardIosIcon className={`${styles.arrow}`} />
+            {title} <ArrowForwardIosIcon className={styles.arrow} />
           </button>
         </Row>
       </Container>

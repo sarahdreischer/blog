@@ -7,9 +7,9 @@
 .imageTitle {
   border: 0;
   z-index: 1000;
-  border-radius: 2px;
+  border-radius: 3px;
   font-size: 1.5em;
-  background-color: #e29578;
+  background-color: #093f48;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -20,7 +20,7 @@
   max-width: 0;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 1s linear, width 2s linear;
+  transition: opacity 1s linear, width 1s linear;
 }
 
 .imageTitle:hover .arrow {
