@@ -4,40 +4,28 @@
   height: 100%;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
+.imageTitle {
+  border: 0;
+  z-index: 1000;
   background-color: #e29578;
-}
-
-.overlay:hover {
-  opacity: 0.95;
-}
-
-.invertedOverlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0.95;
-  background-color: #e29578;
-}
-
-.invertedOverlay:hover {
-  transition: 0.5s ease;
-  opacity: 0;
-}
-
-.overlayTextSize {
+  border-radius: 1px;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   font-size: 20px;
+}
+
+.imageTitle .arrow {
+  max-width: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s linear, width 2s linear;
+}
+
+.imageTitle:hover .arrow {
+  max-width: 100%;
+  background-color: transparent;
+  visibility: visible;
+  opacity: 1;
 }
