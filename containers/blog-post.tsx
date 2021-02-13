@@ -6,6 +6,7 @@ import { WrappedComponents } from "./components/posts/post-components";
 import styles from "./styles/blog-post.module.css";
 import Image from "next/image";
 import moment from "moment";
+import { ShareButtons } from "./components/social-media/share-buttons";
 
 interface BlogPostPageProps {
   post: Post;
@@ -55,6 +56,12 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
               <b>Sarah Dreischer, Software Engineer from London, UK</b> on{" "}
               <b>{postDate}</b>.
             </span>
+          </Row>
+          <Row className="pt-5 justify-content-center">
+            <b>Share this Post</b>
+          </Row>
+          <Row className="pt-4">
+            <ShareButtons route={`/blog/${post.id}`} title={post.title} />
           </Row>
         </Container>
       }
