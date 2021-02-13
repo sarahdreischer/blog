@@ -12,16 +12,14 @@ interface ShareButtonsProps {
 
 export const ShareButtons = ({ title }: ShareButtonsProps) => {
   const router = useRouter();
-  const rawUrl: string = `https://softwarewithsarah.com${router.asPath}`;
-  const parsedUrl: string = rawUrl
-    .replaceAll(":", "%3A")
-    .replaceAll("/", "%2F");
-  const parsedTitle: string = title.replaceAll(" ", "%20");
+  const rawUrl = `https://softwarewithsarah.com${router.asPath}`;
+  const parsedUrl = rawUrl.replace(/:/g, "%3A").replace(/\//g, "%2F");
+  const parsedTitle = title.replaceAll(/\s/g, "%20");
 
-  const twitterLink: string = `https://twitter.com/intent/tweet?url=${parsedUrl}&text=${parsedTitle}`;
-  const facebookLink: string = `https://www.facebook.com/sharer/sharer.php?u=${parsedUrl}`;
-  const pinterestLink: string = `http://pinterest.com/pin/create/button/?url=${parsedUrl}&media=&description=${parsedTitle}`;
-  const linkedInLink: string = `http://www.linkedin.com/shareArticle?mini=true&url=${parsedUrl}&title=${parsedTitle}`;
+  const twitterLink = `https://twitter.com/intent/tweet?url=${parsedUrl}&text=${parsedTitle}`;
+  const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${parsedUrl}`;
+  const pinterestLink = `http://pinterest.com/pin/create/button/?url=${parsedUrl}&media=&description=${parsedTitle}`;
+  const linkedInLink = `http://www.linkedin.com/shareArticle?mini=true&url=${parsedUrl}&title=${parsedTitle}`;
 
   return (
     <div className="d-flex justify-content-around w-100">
