@@ -61,7 +61,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
             <b>Share this Post</b>
           </Row>
           <Row className="pt-4">
-            <ShareButtons route={`/blog/${post.id}`} title={post.title} />
+            <ShareButtons title={post.title} />
           </Row>
         </Container>
       }

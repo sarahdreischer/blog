@@ -4,14 +4,15 @@ import PinterestIcon from "@material-ui/icons/Pinterest";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import styles from "./share-buttons.module.css";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 interface ShareButtonsProps {
-  route: string;
   title: string;
 }
 
-export const ShareButtons = ({ route, title }: ShareButtonsProps) => {
-  const rawUrl = `https://softwarewithsarah.com/${route}`;
+export const ShareButtons = ({ title }: ShareButtonsProps) => {
+  const router = useRouter();
+  const rawUrl = `https://softwarewithsarah.com${router.asPath}`;
   const parsedUrl = rawUrl.replaceAll(":", "%3A").replaceAll("/", "%2F");
   const parsedTitle = title.replaceAll(" ", "%20");
 
