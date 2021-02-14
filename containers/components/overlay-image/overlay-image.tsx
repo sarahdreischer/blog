@@ -1,6 +1,5 @@
 import Image from "next/image";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import styles from "./overlay-image.module.css";
 
 interface OverlayImageProps {
@@ -18,15 +17,18 @@ export const OverlayImage = ({ title, imageUrl }: OverlayImageProps) => {
         layout="fill"
         priority
       />
-      <Container className="h-100 justify-content-center align-items-center">
-        <Row className="h-75 justify-content-center align-items-end">
-          <button
-            className={`d-flex align-items-center text-white px-1 ${styles.imageTitle}`}
-          >
-            {title} <ArrowForwardIosIcon className={styles.arrow} />
-          </button>
-        </Row>
-      </Container>
+      <div className={`${styles.overlay} h-100 w-100 position-absolute`}>
+        <Container className="h-100 d-flex justify-content-center align-items-center">
+          <div className="flex-column">
+            <h1 className="text-white">{title}</h1>
+            <p>
+              <a className="text-white" href="#">
+                Coming Soon
+              </a>
+            </p>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 };
