@@ -50,6 +50,7 @@
 
 .imageContainer a,
 .imageContainer p {
+  visibility: hidden;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -60,6 +61,7 @@
 
 .imageContainer:hover a,
 .imageContainer:hover p {
+  visibility: visible;
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: translate3d(0, 0, 0);

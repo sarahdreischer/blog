@@ -41,7 +41,7 @@ export const PostSummary = ({
   return (
     <div className="text-left pb-3">
       <Row>
-        <Col md={5}>
+        <Col md={4}>
           <Image
             alt={title}
             src={imageUrl}
@@ -51,8 +51,8 @@ export const PostSummary = ({
             layout="responsive"
           />
         </Col>
-        <Col md={7}>
-          <h4 className="pb-2">{title}</h4>
+        <Col md={8}>
+          <h1 className="h4 pb-2">{title}</h1>
           <p style={{ lineHeight: 1.5 }}>{paragraph}</p>
           <Link as={`/blog/${id}`} href={"/blog/[id]"}>
             <Button variant="outline-info">Read more...</Button>
