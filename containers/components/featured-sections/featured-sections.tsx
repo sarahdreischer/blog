@@ -6,7 +6,7 @@ interface FeaturedProps {}
 
 export const FeaturedSections = (props: FeaturedProps) => {
   return (
-    <Row className="p-3 h-100">
+    <Row className="p-3 mx-1 h-100">
       <Col className={`${styles.largeImage} pl-0`} md={8}>
         <OverlayImage
           imageUrl="/featured-sections/image-1.jpeg"

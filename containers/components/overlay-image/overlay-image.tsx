@@ -20,11 +20,9 @@ export const OverlayImage = ({ title, imageUrl }: OverlayImageProps) => {
       <div className={`${styles.overlay} h-100 w-100 position-absolute`}>
         <Container className="h-100 d-flex justify-content-center align-items-center">
           <div className="flex-column">
-            <h1 className="text-white">{title}</h1>
+            <h1 className="h5 text-white">{title}</h1>
             <p>
-              <a className="text-white" href="#">
-                Coming Soon
-              </a>
+              <a className="text-white">Coming Soon</a>
             </p>
           </div>
         </Container>
