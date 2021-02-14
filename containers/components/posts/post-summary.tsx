@@ -42,14 +42,18 @@ export const PostSummary = ({
     <div className="text-left pb-3">
       <Row>
         <Col md={4}>
-          <Image
-            alt={title}
-            src={imageUrl}
-            width={60}
-            height={40}
-            objectFit="cover"
-            layout="responsive"
-          />
+          <Link as={`/blog/${id}`} href={"/blog/[id]"}>
+            <a>
+              <Image
+                alt={title}
+                src={imageUrl}
+                width={60}
+                height={40}
+                objectFit="cover"
+                layout="responsive"
+              />
+            </a>
+          </Link>
         </Col>
         <Col md={8}>
           <h1 className="h4 pb-2">{title}</h1>
