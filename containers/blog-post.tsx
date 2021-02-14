@@ -20,12 +20,11 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
     <Body
       header={
         <Image
-          className={`w-100 ${styles.summaryImage}`}
-          objectFit="cover"
           height={120}
           width={400}
+          objectFit="cover"
           layout="responsive"
-          alt={post.title}
+          alt={`${post.title} Header image`}
           src={post.imageUrl}
           priority
         />

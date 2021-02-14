@@ -4,6 +4,13 @@
   max-width: 2000px;
 }
 
+.header {
+  max-height: 300px;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 @media (max-width: 768px) {
   .bodyContainer {
     width: 100vw;

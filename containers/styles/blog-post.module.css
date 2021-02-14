@@ -2,10 +2,6 @@
   margin-top: 100px;
 }
 
-.summaryImage {
-  max-height: 400px;
-}
-
 @media (max-width: 992px) {
   .postSidebar {
     margin-top: 10px;

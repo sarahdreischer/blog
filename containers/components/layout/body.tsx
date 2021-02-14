@@ -10,7 +10,7 @@ interface BodyWrapperProps {
 export const Body = ({ main, sidebar, header }: BodyWrapperProps) => {
   return (
     <>
-      {<div className="h-25 overflow-hidden px-0">{header}</div> || null}
+      {header ? <div className={styles.header}>{header}</div> : null}
       {renderMainContainer({ main, sidebar })}
     </>
   );
