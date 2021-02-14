@@ -8,6 +8,7 @@ export const WrappedComponents = { Image };
 export const StylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
   h2: ({ children }) => <Heading2 children={children} />,
+  h3: ({ children }) => <Heading3 children={children} />,
   p: (props) => <Paragraph {...props} />,
   "p.inlineCode": (props) => <InlineCode {...props} />,
   pre: ({ children }) => <CodeBlock children={children} />,
@@ -21,8 +22,12 @@ const Heading1 = ({ children }) => {
 };
 
 const Heading2 = ({ children }) => {
+  return <h2 className="h4 font-weight-bold heading-color py-2">{children}</h2>;
+};
+
+const Heading3 = ({ children }) => {
   return (
-    <h2 className="h4 font-weight-bold heading-color py-2 ml-4">{children}</h2>
+    <h2 className="h5 font-weight-bold heading-color py-2 ml-4">{children}</h2>
   );
 };
 
