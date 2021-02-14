@@ -1,25 +1,15 @@
-import {
-  Container,
-  Typography,
-  Link as MaterialUILink,
-} from "@material-ui/core";
 import Link from "next/link";
+import { Container } from "react-bootstrap";
+import styles from "../../styles/footer.module.css";
 
 interface FooterProps {}
 
 export const Footer = (props: FooterProps) => {
   return (
-    <footer>
-      <Container maxWidth="lg" className="py-2">
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          <Contact />
-        </Typography>
+    <footer className={styles.fontSize}>
+      <Container className="flex-column justify-content-center text-center text-secondary py-2">
         <Copyright />
+        <InternalLinks />
       </Container>
     </footer>
   );
@@ -27,24 +17,31 @@ export const Footer = (props: FooterProps) => {
 
 const Copyright = () => {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
+    <div>
+      Copyright ©{" "}
       <Link as="/" href="/">
-        <MaterialUILink color="inherit">Software With Sarah</MaterialUILink>
+        <a className="text-secondary">Software With Sarah</a>
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </div>
   );
 };
 
-const Contact = () => {
+const InternalLinks = () => {
   return (
-    <>
+    <span>
       <Link as="/about" href="/about">
-        <MaterialUILink color="inherit">Contact me</MaterialUILink>
+        <a className="text-secondary">Contact</a>
       </Link>{" "}
-      for any questions or suggestions.
-    </>
+      |{" "}
+      <Link as="/terms" href="/terms">
+        <a className="text-secondary">Terms</a>
+      </Link>{" "}
+      |{" "}
+      <Link as="/privacy" href="/privacy">
+        <a className="text-secondary">Privacy</a>
+      </Link>{" "}
+    </span>
   );
 };
