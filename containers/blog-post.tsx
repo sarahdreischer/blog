@@ -31,7 +31,7 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
       }
       main={
         <Container fluid className="pt-5">
-          <h1 className="display-4">{post.title}</h1>
+          <h1 className={styles.title}>{post.title}</h1>
           <p className="pt-3" style={{ fontSize: 18, lineHeight: 2 }}>
             <em>{post.subtitle || null}</em>
           </p>
