@@ -1,0 +1,124 @@
+---
+title: "A Beginner-Friendly Guide to learning Front-End Development"
+createdAt: "Sat, 16 Feb 2021 18:00:00 GMT"
+subtitle: "Are you considering to become a Front-End Developer or are simply curious about the skills needed to become a professional developer or you simply would like to understand how websites and apps are created? Here is a beginner-friendly guide on how to best approach your learning journey."
+imageUrl: "https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1652&q=80"
+summary: "Are you considering to become a Front-End Developer or are simply curious about the skills needed or you simply would like to understand how websites and apps are created? Here is a beginner-friendly guide on how to best approach the learning journey."
+keywords: ""
+notes: ""
+---
+
+Learning the skills needed to become a Front-End Developer can often be confusing and time-intensive. If you don't know where to start and are confused about what to focus
+your time and energy on, here are some of the languages, frameworks and tools to help guide you through the maze of technology.
+
+<h1>What skills should I learn first?</h1>
+
+As a Front-End Developer you create Graphical User Interfaces (GUI) or simply User Interfaces (UI) such as websites, smartphone apps and web apps.
+A great way to start learning front-end development is by creating your own website which you don't need to host publically if you are not comfortable with that -
+you can simply run websites locally on your machine for practice.
+
+To create a website you should first learn the basics of **HTML, CSS and JavaScript**:
+
+- **HTML** allows you to create static content on your website as well as the layout and structure.
+
+- With **CSS** you change the behaviour, style and animation of components that are placed on your website through HTML but it can also be used to dynamically size components
+  based on the size of the device that accesses the page.
+
+- **JavaScript** allows you to add logic to your otherwise static website, such as retrieving user information, interacting with backend servers etc.
+
+Here are a few links to tutorials that are great resources to learn these three important elements:
+
+- [HTML](https://www.w3schools.com/html/html_intro.asp)
+
+- [CSS](https://www.w3schools.com/w3css/w3css_intro.asp)
+
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+
+- [JavaScript ES5](https://www.w3schools.com/js/js_es5.asp)
+
+- [JavaScript ES6](https://www.w3schools.com/js/js_es6.asp) - lots of changes have been made in the more recent JavaScript ES6 version, so it makes sense to learn ES5 as well - it will help you to better understand code that has been written using JavaScript ES5 or earlier
+
+<h2>Angular and React.JS</h2>
+
+Once you have better understanding of HTML, CSS and JavaScript you can move on to learning frameworks such as **Angular, React.JS and Vue.js** which are all JavaScript frameworks
+for building web applications. Especially React.JS and Angular have gained much popularity over the recent years and knowing how to work with those is what many employers are looking out for.
+If you're unsure which of these frameworks to start with then I would suggest to start with React.JS, as Angular has a steeper learning curve.
+
+**Note: Learning to work with React.JS will not only teach you to create web applications but you will also be able to create phone apps using the React Native framework.**
+
+<h2>State Management Libraries</h2>
+
+To become confident in using the frameworks above you should also learn about state management as they will simplify the way you deal with states in an application.
+If you are not sure what states are in front-end applications, then the following example should hopefully make it clearer:
+
+**Imagine a Sliding Banner component that changes its displayed image every 3 seconds. A reasonable state for the component would be the latest image displayed.**
+
+**Or imagine a Facebook Like Button - its current state could be the number of likes collected so far.**
+
+**Or imagine a Google Search Bar - its current state could be the latest letters typed in and so on...**
+
+As you can probably tell there can be countless states in a single application which can become overwhelming especially if some states need to be accessed and mutated
+by several components.
+
+There are several available libraries that combat the overwhelming nature of state management in different ways - for instance **Redux for React (NgRx is the Angular equivalent)** stores
+all application states centrally and a single component (or several components) can choose to access any subset of the current state it needs.
+
+With **React Hooks** on the other hand you are able to declare state that only belongs to a single component and is therefore invisible to any other component.
+Each pattern has its advantages and disadvantages and choosing the right one depends on the type of application you are developing.
+
+Here are some useful resources to handle state management in React and Angular:
+
+- [Redux](https://react-redux.js.org/introduction/basic-tutorial)
+
+- [NgRx](https://stackabuse.com/beginners-guide-to-ngrx-and-angular/)
+
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+
+- etc.
+
+<h2>CSS Frameworks</h2>
+
+CSS Frameworks such as [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) or [MaterialUI](https://material-ui.com/getting-started/installation/) can vastly
+simplify a developers life. They allow you to create responsive layouts (read about [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) if you are wondering how you can make
+responsive layouts from scratch) and they also come pre-configured with default styling for many standard components such as buttons, navigation bars and page forms.
+
+<h1>What else do I need to know?</h1>
+
+The tools, frameworks and libraries you will need to create a JavaScript application (e.g. React.JS, Angular, Bootstrap etc.) are accessible through a package manager, i.e.
+**Node Package Manager (npm) or Yarn**. There are a few performance differences between the two package managers - in general Yarn has better performance speed as it can install multiple
+packages simultaneously but npm has a slight advantage over security concerns - it remains down to your preference and style which one to choose.
+
+In order to install either npm or Yarn you first need to set-up Node.JS which will automatically configure npm. Once you've installed npm you are able to install Yarn through npm - you can
+install the latest Yarn version through `npm install --global Yarn`.
+
+As a professional developer you will also need to know how to use a version control system in order to work on an application with several developers simultaneously and to add features
+and continuously improve the code progressively with ease.
+Therefore, if you have not yet come across **Git** (which is the most widely-used version control system) you should become familiar with its commands and understand how it works.
+The most useful commands are the following:
+
+- `git clone <repo_url>` to download a remote repository (i.e. the link to your codebase) to your local machine
+
+- `git checkout <branch>` to work on a branch that will contain new features and improvents which is still in development and not ready to be used in production
+
+- `git add <files, directories etc.>` to select which files should be uploaded to the remote repository
+
+- `git commit -m <commit message>` to save all the latest changes with a short description
+
+- `git push` to push your local changes to the remote repository
+
+- `git pull` to download the latest changes from the remote repository
+
+- `git merge <branch>` to merge the latest changes of your current branch with all the changes made on another branch
+
+Git is used by many popular platforms such as **Github, Bitbucket or GitLab** - you can create your own free account with any of these providers.
+Here's a [Git Handbook](https://guides.github.com/introduction/git-handbook/) to help you understand how to use Git.
+
+<h1>To wrap it up</h1>
+
+Of course only reading theory has never turned a newbie into a proud engineer - what's most important is to use the skills you've learned by working your own projects.
+
+Therefore, here is a great tutorial that walks you through creating a simple [To-Do App](https://material-ui.com/getting-started/installation/). It not only covers how to create the
+UI application but also how to interact with a database through a back-end service (don't worry - it sounds scarier than it is). Knowing how to interact with other services is another
+important skill a Front-Developer needs to have as data mostly originates from different sources that is made accessible through APIs.
+
+I hope you have found these tips useful. Thank you for reading this post and good luck!

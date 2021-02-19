@@ -34,7 +34,7 @@ const Heading3 = ({ children }) => {
 const Paragraph = (props) => {
   return (
     <p
-      className={`text-justify ${styles.fontSize}`}
+      className={`text-left ${styles.fontSize}`}
       style={{ lineHeight: 2.3 }}
       {...props}
     />
