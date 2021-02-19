@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import { FeaturedSections } from "./components/featured-sections/featured-sections";
 import { Body } from "./components/layout/body";
 import { CustomPagination } from "./components/pagination/custom-pagination";
-import { PostSummaries } from "./components/posts/post-summary";
+import { PostSummaries } from "./components/posts/post-summary/post-summary";
 import styles from "./styles/home.module.css";
 
 interface HomepageProps {

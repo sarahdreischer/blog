@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { Post } from "lib/types/post";
 
 export const getAllSortedPosts = () => {
   return getAllPosts().sort((postA, postB) =>
-    postA.createdAt < postB.createdAt ? 1 : -1
+    postA.datePublished < postB.datePublished ? 1 : -1
   );
 };
 
@@ -21,7 +22,7 @@ export const getNumberOfPostPages = (numPerPage: number) => {
   return Math.ceil(posts.length / numPerPage);
 };
 
-const getAllPosts = () => {
+const getAllPosts = (): Post[] => {
   const directory = path.join(process.cwd(), "posts");
   const postDirectories = fs.readdirSync(directory);
 
@@ -34,10 +35,14 @@ const getAllPosts = () => {
     return {
       id,
       title: data.title,
-      createdAt: new Date(data.createdAt),
+      datePublished: new Date(data.datePublished),
+      dateModified: new Date(data.dateModified),
       imageUrl: data.imageUrl,
+      imageWidth: data.imageWidth,
+      imageHeight: data.imageHeight,
       summary: data.summary,
       content: content,
+      keywords: data.keywords.split(", "),
       ...data,
     };
   });

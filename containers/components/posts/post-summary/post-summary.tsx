@@ -57,6 +57,7 @@ export const PostSummary = ({
         </Col>
         <Col md={8}>
           <h1 className="h4 pb-2">{title}</h1>
+          {/* TODO add Publish Date here */}
           <p style={{ lineHeight: 1.5 }}>{paragraph}</p>
           <Link as={`/blog/${id}`} href={"/blog/[id]"}>
             <Button variant="outline-info">Read more...</Button>

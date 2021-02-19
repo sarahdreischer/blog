@@ -6,9 +6,12 @@ import renderToString from "next-mdx-remote/render-to-string";
 import {
   WrappedComponents,
   StylingComponents,
-} from "containers/components/posts/post-components";
+} from "containers/components/posts/post-components/post-components";
 import { MDXProvider } from "@mdx-js/react";
 import { ROOT_LINK } from "lib/seo/meta-tags";
+import { jsonLdScriptProps } from "react-schemaorg";
+import moment from "moment";
+import { BlogPosting } from "schema-dts";
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -49,6 +52,55 @@ const BlogPost = ({ post }) => {
         <meta content={post.summary} property="og:description" />
         <meta content={pagePath} property="og:url" />
         <link rel="canonical" href={pagePath} />
+        <script
+          {...jsonLdScriptProps<BlogPosting>({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            image: {
+              "@type": "ImageObject",
+              url: post.imageUrl,
+              width: post.imageWidth,
+              height: post.imageHeight,
+            },
+            url: pagePath,
+            headline: post.title,
+            datePublished: moment(new Date(post.datePublished))
+              .format("DD/MM/YYYY")
+              .toString(),
+            dateModified: moment(new Date(post.dateModified))
+              .format("DD/MM/YYYY")
+              .toString(),
+            inLanguage: "en-GB",
+            isFamilyFriendly: true,
+            copyrightYear: 2021,
+            copyrightHolder: "Software With Sarah",
+            contentLocation: {
+              "@type": "Place",
+              name: "London, UK",
+            },
+            author: {
+              "@type": "Person",
+              name: "Sarah Dreischer",
+              url: "https://softwarewithsarah.com/about/",
+            },
+            creator: {
+              "@type": "Person",
+              name: "Sarah Dreischer",
+              url: "https://softwarewithsarah.comm/about/",
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Sarah Dreischer",
+              url: "https://softwarewithsarah.com/about/",
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://softwarewithsarah.com/blog/",
+            },
+            keywords: post.keywords,
+            description: post.summary,
+          })}
+        />
       </Head>
       <MDXProvider components={StylingComponents}>
         <BlogPostPage post={post} />
