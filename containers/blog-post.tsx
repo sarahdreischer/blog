@@ -25,17 +25,19 @@ export const BlogPostPage = ({ post }: BlogPostPageProps) => {
           objectFit="cover"
           layout="responsive"
           alt={`${post.title} Header image`}
-          src={post.imageUrl}
+          src={post.headerImage}
           priority
         />
       }
       main={
         <Container fluid className="pt-5">
-          <h1 className={styles.title}>{post.title}</h1>
-          <p className="pt-3" style={{ fontSize: 18, lineHeight: 2 }}>
-            <em>{post.subtitle || null}</em>
-          </p>
-          <div className="pt-2">{content}</div>
+          <article>
+            <h1 className={styles.title}>{post.title}</h1>
+            <p className="pt-3" style={{ fontSize: 18, lineHeight: 2 }}>
+              <em>{post.subtitle || null}</em>
+            </p>
+            <div className="pt-2">{content}</div>
+          </article>
         </Container>
       }
       sidebar={

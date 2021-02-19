@@ -22,7 +22,7 @@ export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
           <PostSummary
             id={post.id}
             title={post.title}
-            imageUrl={post.imageUrl}
+            imageUrl={post.headerImage}
             paragraph={post.summary}
             key={post.title}
           />

@@ -3,7 +3,8 @@ export interface Post {
   url?: string;
   title: string;
   subtitle?: string;
-  imageUrl: string;
+  headerImage: string;
+  allImages: string[];
   imageWidth: string;
   imageHeight: string;
   content: string;

@@ -56,46 +56,32 @@ const BlogPost = ({ post }) => {
           {...jsonLdScriptProps<BlogPosting>({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            image: {
-              "@type": "ImageObject",
-              url: post.imageUrl,
-              width: post.imageWidth,
-              height: post.imageHeight,
-            },
+            image:
+              post.allImages.length === 1 ? post.allImages[0] : post.allImages,
             url: pagePath,
             headline: post.title,
             datePublished: moment(new Date(post.datePublished))
-              .format("DD/MM/YYYY")
+              .format("YYYY-MM-DD")
               .toString(),
             dateModified: moment(new Date(post.dateModified))
-              .format("DD/MM/YYYY")
+              .format("YYYY-MM-DD")
               .toString(),
             inLanguage: "en-GB",
             isFamilyFriendly: true,
-            copyrightYear: 2021,
-            copyrightHolder: "Software With Sarah",
-            contentLocation: {
-              "@type": "Place",
-              name: "London, UK",
-            },
             author: {
               "@type": "Person",
               name: "Sarah Dreischer",
-              url: "https://softwarewithsarah.com/about/",
+              url: "https://softwarewithsarah.com/about",
             },
             creator: {
               "@type": "Person",
               name: "Sarah Dreischer",
-              url: "https://softwarewithsarah.comm/about/",
+              url: "https://softwarewithsarah.comm/about",
             },
             publisher: {
               "@type": "Person",
               name: "Sarah Dreischer",
-              url: "https://softwarewithsarah.com/about/",
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": "https://softwarewithsarah.com/blog/",
+              url: "https://softwarewithsarah.com/about",
             },
             keywords: post.keywords,
             description: post.summary,
