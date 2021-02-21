@@ -9,10 +9,14 @@ export const StylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
   h2: ({ children }) => <Heading2 children={children} />,
   h3: ({ children }) => <Heading3 children={children} />,
+  a: (props) => <Link {...props} />,
   p: (props) => <Paragraph {...props} />,
   "p.inlineCode": (props) => <InlineCode {...props} />,
   pre: ({ children }) => <CodeBlock children={children} />,
+  strong: (props) => <Strong {...props} />,
   personal: (props) => <Personal {...props} />,
+  exampleHeading: (props) => <ExampleHeading {...props} />,
+  example: (props) => <Example {...props} />,
 };
 
 const Heading1 = ({ children }) => {
@@ -41,6 +45,23 @@ const Paragraph = (props) => {
   );
 };
 
+const Strong = (props) => <strong {...props} style={{ color: "#093F48" }} />;
+
+const Link = (props) => (
+  <strong>
+    <a
+      {...props}
+      style={{
+        color: "#00A8D1",
+        textDecoration: "underline",
+        textUnderlineOffset: 2,
+      }}
+      target="_blank"
+      rel="noreferrer"
+    />
+  </strong>
+);
+
 const Personal = (props) => {
   return (
     <p
@@ -50,6 +71,22 @@ const Personal = (props) => {
     />
   );
 };
+
+const ExampleHeading = (props) => (
+  <p
+    {...props}
+    className="py-4"
+    style={{ fontWeight: "bolder", fontSize: 18, lineHeight: 0 }}
+  />
+);
+
+const Example = (props) => (
+  <div
+    {...props}
+    className="pb-4"
+    style={{ color: "#28566d", fontSize: 18, fontWeight: "bold" }}
+  />
+);
 
 const InlineCode = (props) => {
   return (
