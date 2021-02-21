@@ -1,39 +1,30 @@
 import Image from "next/image";
-import { Container, Button, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import styles from "./overlay-image.module.css";
 
 interface OverlayImageProps {
   title: string;
-  url: string;
-  buttonText: string;
-  onButtonClick: () => void;
-  invertedOverlay?: boolean;
+  imageUrl: string;
 }
 
-export const OverlayImage = ({
-  title,
-  url,
-  buttonText,
-  onButtonClick,
-  invertedOverlay,
-}: OverlayImageProps) => {
+export const OverlayImage = ({ title, imageUrl }: OverlayImageProps) => {
   return (
     <div className={styles.imageContainer}>
-      <Image src={url} alt={title} objectFit="cover" layout="fill" priority />
-      <div
-        className={invertedOverlay ? styles.invertedOverlay : styles.overlay}
-      >
-        <Container className="h-75">
-          <Row className="h-100 justify-content-center align-items-center">
-            <div className={`text-white ${styles.overlayTextSize}`}>
-              {title}
-            </div>
-          </Row>
-          <Row className="h-25 justify-content-center align-items-center">
-            <Button variant="outline-light" onClick={onButtonClick} disabled>
-              {buttonText}
-            </Button>
-          </Row>
+      <Image
+        src={imageUrl}
+        alt={title}
+        objectFit="cover"
+        layout="fill"
+        priority
+      />
+      <div className={`${styles.overlay} h-100 w-100 position-absolute`}>
+        <Container className="h-100 d-flex justify-content-center align-items-center">
+          <div className="flex-column">
+            <h1 className="h5 text-white">{title}</h1>
+            <p>
+              <a className="text-white">Coming Soon</a>
+            </p>
+          </div>
         </Container>
       </div>
     </div>

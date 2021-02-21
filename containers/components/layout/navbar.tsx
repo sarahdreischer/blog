@@ -13,7 +13,9 @@ export const BlogNavbar = ({ pages }: BlogNavbarProps) => {
       <Nav.Link className="px-5" key={page.label}>
         <Link as={page.path} href={page.path}>
           <div className="NavButton">
-            <span className="Label">{page.label}</span>
+            <span className="Label">
+              <b>{page.label}</b>
+            </span>
           </div>
         </Link>
       </Nav.Link>

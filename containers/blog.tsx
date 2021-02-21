@@ -18,7 +18,7 @@ export const BlogPage = ({ posts }: BlogPageProps) => {
               <Col key={post.title} md={4} className="d-flex flex-grow pb-3">
                 <Card>
                   <Image
-                    src={post.imageUrl}
+                    src={post.headerImage}
                     alt={post.title}
                     width={80}
                     height={50}

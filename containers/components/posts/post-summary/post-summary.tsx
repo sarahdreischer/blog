@@ -22,7 +22,7 @@ export const PostSummaries = ({ posts }: SummarizedPostsProp) => {
           <PostSummary
             id={post.id}
             title={post.title}
-            imageUrl={post.imageUrl}
+            imageUrl={post.headerImage}
             paragraph={post.summary}
             key={post.title}
           />
@@ -41,18 +41,23 @@ export const PostSummary = ({
   return (
     <div className="text-left pb-3">
       <Row>
-        <Col md={5}>
-          <Image
-            alt={title}
-            src={imageUrl}
-            width={100}
-            height={65}
-            objectFit="cover"
-            layout="responsive"
-          />
+        <Col md={4}>
+          <Link as={`/blog/${id}`} href={"/blog/[id]"}>
+            <a>
+              <Image
+                alt={title}
+                src={imageUrl}
+                width={60}
+                height={40}
+                objectFit="cover"
+                layout="responsive"
+              />
+            </a>
+          </Link>
         </Col>
-        <Col md={7}>
-          <h4 className="pb-2">{title}</h4>
+        <Col md={8}>
+          <h1 className="h4 pb-2">{title}</h1>
+          {/* TODO add Publish Date here */}
           <p style={{ lineHeight: 1.5 }}>{paragraph}</p>
           <Link as={`/blog/${id}`} href={"/blog/[id]"}>
             <Button variant="outline-info">Read more...</Button>
