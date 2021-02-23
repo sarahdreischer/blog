@@ -57,7 +57,7 @@ const Link = (props) => (
         textUnderlineOffset: 2,
       }}
       target="_blank"
-      rel="noreferrer"
+      rel="nofollow"
     />
   </strong>
 );
