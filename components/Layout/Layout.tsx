@@ -4,6 +4,7 @@ import { NextComponentType, NextPageContext } from 'next';
 import { Container } from 'react-bootstrap';
 import { Footer } from './components/Footer/Footer';
 import { BlogNavbar, Page } from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
 
 interface DefaultLayoutProps {
   Component: NextComponentType<NextPageContext, any, {}>;
@@ -20,18 +21,7 @@ export const Layout = ({ Component, pageProps }: DefaultLayoutProps) => {
 
   return (
     <>
-      <Toolbar className='w-100'>
-        <Image
-          alt='Programming Blog | Software with Sarah'
-          src='/logo/logo-min.svg'
-          width={200}
-          height={36}
-          objectFit='contain'
-          priority
-        />
-      </Toolbar>
-      <Divider className='w-100' />
-      <BlogNavbar pages={pages} />
+      <Header />
       <Divider className='w-100' />
       <Container fluid className='px-0'>
         <div className='mb-3'>
