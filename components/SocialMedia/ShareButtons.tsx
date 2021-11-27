@@ -1,10 +1,11 @@
-import TwitterIcon from '@material-ui/icons/Twitter';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import PinterestIcon from '@mui/icons-material/Pinterest';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import styles from './ShareButtons.module.css';
+import React from 'react';
 
 interface ShareButtonsProps {
   title: string;

@@ -2,9 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { Layout } from '@components';
+import { createTheme } from '@mui/material';
+import { ThemeProvider } from '@mui/system';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles.scss';
-import { createTheme, ThemeProvider } from '@material-ui/core';
 
 const theme = createTheme();
 

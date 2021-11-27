@@ -1,5 +1,5 @@
 import { Body, CustomPagination, FeaturedSections, PostSummaries } from '@components';
-import { Divider } from '@material-ui/core';
+import { Divider } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';

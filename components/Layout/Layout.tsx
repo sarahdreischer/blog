@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import { Divider, Toolbar } from '@material-ui/core';
 import { NextComponentType, NextPageContext } from 'next';
-import { Container } from 'react-bootstrap';
 import { Footer } from './components/Footer/Footer';
-import { BlogNavbar, Page } from './components/Navbar/Navbar';
+import { Page } from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
+import { Container } from 'react-bootstrap';
+import { Divider } from '@mui/material';
 
 interface DefaultLayoutProps {
   Component: NextComponentType<NextPageContext, any, {}>;

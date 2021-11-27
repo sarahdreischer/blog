@@ -1,5 +1,5 @@
 // import InstagramIcon from '@mui/icons-material/Instagram';
-import { Toolbar } from '@material-ui/core';
+import { Toolbar } from '@mui/material';
 import cn from 'classnames';
 import React from 'react';
 import styles from './Header.module.scss';
