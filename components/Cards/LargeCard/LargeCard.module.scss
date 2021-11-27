@@ -1,0 +1,10 @@
+.container {
+  min-height: 100px;
+  border: 1px solid #175873;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  .summary {
+    max-height: 70%;
+  }
+}

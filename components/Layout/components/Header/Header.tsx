@@ -8,16 +8,16 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   return (
-    <Toolbar className='d-flex justify-content-between w-100 pt-2'>
-      <div className={cn('h4', styles.logo)}>
-        <strong>
+    <Toolbar className='d-flex justify-content-between w-100 pt-1'>
+      <Link as='/' href='/'>
+        <div className={cn('h4 cursor-pointer', styles.logo)}>
           Software
           <br />
           With
           <br />
           Sarah
-        </strong>
-      </div>
+        </div>
+      </Link>
       <div className={cn('d-flex', styles.socialMedia)}>
         <div className={styles.link}>
           <Link href='https://www.instagram.com/softwarewithsarah/' passHref={true}>

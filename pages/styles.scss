@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu;
 }
 
 p {
@@ -17,7 +17,7 @@ a:hover {
 /* Bootstrap Overrides */
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 .page-item.active .page-link {
@@ -60,4 +60,8 @@ a.page-link {
 
 .round-image {
   border-radius: 50%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
