@@ -1,7 +1,7 @@
-import Head from "next/head";
-import { getNumberOfPostPages, getPostsInRange } from "../lib/api/posts";
-import { getOpenGraphTags, ROOT_LINK } from "lib/seo/meta-tags";
-import { Homepage } from "../containers/home";
+import Head from 'next/head';
+import { getNumberOfPostPages, getPostsInRange } from '../lib/api/posts';
+import { getOpenGraphTags, ROOT_LINK } from 'lib/seo/meta-tags';
+import { HomeScreen } from '@screens';
 
 export const getStaticProps = async () => {
   return {
@@ -19,24 +19,20 @@ const Home = ({ posts, activePage, numberOfPages }) => {
       <Head>
         <title>Programming Blog | Software With Sarah</title>
         <meta
-          content="A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time."
-          name="description"
+          content='A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time.'
+          name='description'
         />
         <meta
-          content="best programming blog 2021, software with sarah, programming, blog, software, tutorials, next.js, typescript, java"
-          name="keywords"
+          content='best programming blog 2021, software with sarah, programming, blog, software, tutorials, next.js, typescript, java'
+          name='keywords'
         />
         {getOpenGraphTags(
-          "Programming Blog | Software With Sarah",
-          "A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time."
+          'Programming Blog | Software With Sarah',
+          'A programming blog to guide aspiring and established developers through the jungle of technology through simple programming tutorials and projects for your free time.',
         )}
-        <link rel="canonical" href={ROOT_LINK} />
+        <link rel='canonical' href={ROOT_LINK} />
       </Head>
-      <Homepage
-        activePage={activePage}
-        posts={posts}
-        numberOfPages={numberOfPages}
-      />
+      <HomeScreen activePage={activePage} posts={posts} numberOfPages={numberOfPages} />
     </>
   );
 };
