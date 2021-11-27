@@ -2,3 +2,14 @@
   font-family: Roboto;
   color: #175873;
 }
+
+.socialMedia {
+  .link {
+    cursor: pointer;
+
+    &:not(:last-child):after {
+      content: '·';
+      padding: 0 15px 0 15px;
+    }
+  }
+}
