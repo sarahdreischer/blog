@@ -3,7 +3,23 @@ import theme from 'prism-react-renderer/themes/nightOwlLight';
 import Image from 'next/image';
 import styles from './PostComponents.module.css';
 
-export const WrappedComponents = { Image };
+export const WrappedComponents = { Image, ExampleHeading, Example };
+
+function ExampleHeading(props) {
+  return (
+    <p {...props} className='py-4' style={{ fontWeight: 'bolder', fontSize: 18, lineHeight: 0 }} />
+  );
+}
+
+function Example(props) {
+  return (
+    <div
+      {...props}
+      className='pb-4'
+      style={{ color: '#28566d', fontSize: 18, fontWeight: 'bold' }}
+    />
+  );
+}
 
 export const StylingComponents = {
   h1: ({ children }) => <Heading1 children={children} />,
@@ -15,8 +31,6 @@ export const StylingComponents = {
   pre: ({ children }) => <CodeBlock children={children} />,
   strong: (props) => <Strong {...props} />,
   personal: (props) => <Personal {...props} />,
-  exampleHeading: (props) => <ExampleHeading {...props} />,
-  example: (props) => <Example {...props} />,
 };
 
 const Heading1 = ({ children }) => {
@@ -54,14 +68,6 @@ const Link = (props) => (
 const Personal = (props) => {
   return <p className={`text-justify ${styles.fontSize}`} style={{ lineHeight: 1.9 }} {...props} />;
 };
-
-const ExampleHeading = (props) => (
-  <p {...props} className='py-4' style={{ fontWeight: 'bolder', fontSize: 18, lineHeight: 0 }} />
-);
-
-const Example = (props) => (
-  <div {...props} className='pb-4' style={{ color: '#28566d', fontSize: 18, fontWeight: 'bold' }} />
-);
 
 const InlineCode = (props) => {
   return (

@@ -4,6 +4,9 @@ import { AppProps } from 'next/app';
 import { Layout } from '@components';
 import 'bootstrap/dist/css/bootstrap.css';
 import './styles.scss';
+import { createTheme, ThemeProvider } from '@material-ui/core';
+
+const theme = createTheme();
 
 const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
@@ -26,7 +29,9 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
       </Head>
       <div className='app'>
         <main>
-          <Layout Component={Component} pageProps={pageProps} />
+          <ThemeProvider theme={theme}>
+            <Layout Component={Component} pageProps={pageProps} />
+          </ThemeProvider>
         </main>
       </div>
     </>
