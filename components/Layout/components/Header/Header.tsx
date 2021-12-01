@@ -10,12 +10,12 @@ export default function Header() {
   return (
     <Toolbar className='d-flex justify-content-between w-100 pt-2'>
       <Link as='/' href='/'>
-        <div className={cn('h4 cursor-pointer', styles.logo)}>
+        <div className={cn('h3 cursor-pointer', styles.logo)}>
           Software
           <br />
           With
           <br />
-          Sarah
+          Sarah<span className={styles.underscore}>_</span>
         </div>
       </Link>
       <div className={cn('d-flex', styles.socialMedia)}>

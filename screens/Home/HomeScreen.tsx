@@ -10,7 +10,7 @@ interface HomeScreenProps {
 }
 
 export const HomeScreen = ({ posts, activePage, numberOfPages }: HomeScreenProps) => {
-  const topPosts = posts.filter((_, i) => i < 3);
+  const topPosts = posts.slice(0).filter((_, i) => i < 3);
   const latestPost = posts[0];
 
   return (
