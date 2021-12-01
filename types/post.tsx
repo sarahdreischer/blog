@@ -10,7 +10,7 @@ export interface Post {
   content: string;
   datePublished: Date;
   dateModified: Date;
-  keywords: string[];
-  summary: string[];
+  keywords: string;
+  summary: string;
   readDurationMin?: number;
 }

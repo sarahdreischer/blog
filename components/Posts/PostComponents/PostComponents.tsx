@@ -3,7 +3,7 @@ import theme from 'prism-react-renderer/themes/nightOwlLight';
 import Image from 'next/image';
 import styles from './PostComponents.module.css';
 
-export const WrappedComponents = { Image, ExampleHeading, Example };
+export const markdownComponents = { Image, ExampleHeading, Example };
 
 function ExampleHeading(props) {
   return (

@@ -1,17 +1,18 @@
-import { Body, ShareButtons, WrappedComponents } from '@components';
+import { Body, ShareButtons, markdownComponents } from '@components';
 import { Container, Row } from 'react-bootstrap';
-import hydrate from 'next-mdx-remote/hydrate';
 import Image from 'next/image';
 import { Post } from '@types';
 import moment from 'moment';
 import styles from './BlogPostScreen.module.scss';
+import React from 'react';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 interface BlogPostPageProps {
   post: Post;
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
 }
 
-export const BlogPostScreen = ({ post }: BlogPostPageProps) => {
-  const content = hydrate(post.content, { components: WrappedComponents });
+export const BlogPostScreen = ({ post, mdxSource }: BlogPostPageProps) => {
   const postDate = moment(new Date(post.datePublished)).format('DD/MM/YYYY');
 
   return (
@@ -34,7 +35,9 @@ export const BlogPostScreen = ({ post }: BlogPostPageProps) => {
             <p className='pt-3' style={{ fontSize: 18, lineHeight: 2 }}>
               <em>{post.subtitle || null}</em>
             </p>
-            <div className='pt-2'>{content}</div>
+            <div className='pt-2'>
+              <MDXRemote {...mdxSource} components={markdownComponents} />
+            </div>
           </article>
         </Container>
       }

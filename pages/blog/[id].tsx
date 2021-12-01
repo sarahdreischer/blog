@@ -1,14 +1,16 @@
 import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
 import { getAllSortedPosts, getPostById } from '../../lib/api/posts';
-import renderToString from 'next-mdx-remote/render-to-string';
 import { MDXProvider } from '@mdx-js/react';
 import { ROOT_LINK } from 'lib/seo/meta-tags';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { BlogPosting } from 'schema-dts';
-import { StylingComponents, WrappedComponents } from '@components';
+import { serialize } from 'next-mdx-remote/serialize';
+import { StylingComponents, markdownComponents } from '@components';
 import { BlogPostScreen } from '@screens';
 import moment from 'moment';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { Post } from '@types';
 
 export const getStaticPaths = async () => {
   const posts = getAllSortedPosts();
@@ -21,17 +23,22 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const post = getPostById(params.id);
-  const mdxContent = await renderToString(post.content, {
-    components: WrappedComponents,
-  });
+  const mdxSource = await serialize(post.content);
+
   return {
     props: {
-      post: { ...post, content: mdxContent },
+      post,
+      mdxSource,
     },
   };
 };
 
-const BlogPost = ({ post }) => {
+interface BlogPostProps {
+  post: Post;
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+}
+
+const BlogPost = ({ post, mdxSource }: BlogPostProps) => {
   const router = useRouter();
   const pagePath = `${ROOT_LINK}${router.pathname.replace('[id]', post.id)}`;
 
@@ -78,7 +85,7 @@ const BlogPost = ({ post }) => {
         />
       </Head>
       <MDXProvider components={StylingComponents}>
-        <BlogPostScreen post={post} />
+        <BlogPostScreen post={post} mdxSource={mdxSource} />
       </MDXProvider>
     </>
   );
