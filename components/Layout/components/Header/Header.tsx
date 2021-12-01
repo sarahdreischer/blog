@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   return (
-    <Toolbar className='d-flex justify-content-between w-100 pt-1'>
+    <Toolbar className='d-flex justify-content-between w-100 pt-2'>
       <Link as='/' href='/'>
         <div className={cn('h4 cursor-pointer', styles.logo)}>
           Software

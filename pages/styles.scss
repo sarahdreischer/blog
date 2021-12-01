@@ -1,5 +1,7 @@
+html,
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu;
+  height: 100%;
 }
 
 p {
@@ -58,10 +60,10 @@ a.page-link {
   margin-bottom: 30vh;
 }
 
-.round-image {
-  border-radius: 50%;
-}
-
 .cursor-pointer {
   cursor: pointer;
+}
+
+.round-image {
+  border-radius: 50%;
 }

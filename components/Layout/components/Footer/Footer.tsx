@@ -7,7 +7,7 @@ interface FooterProps {}
 export const Footer = (props: FooterProps) => {
   return (
     <footer className={styles.fontSize}>
-      <Container className='flex-column justify-content-center text-center text-secondary py-2'>
+      <Container className='flex-column justify-content-center text-center text-secondary'>
         <Copyright />
         <InternalLinks />
       </Container>

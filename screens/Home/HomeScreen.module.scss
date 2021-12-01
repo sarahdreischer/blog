@@ -1,13 +1,11 @@
-.featuredContainer {
-  min-height: 40vh;
-}
+.container {
+  display: grid;
+  grid-template-rows: 40% 58%;
+  row-gap: 2%;
 
-.sidebar {
-  margin-top: 50px;
-}
-
-@media (max-width: 992px) {
-  .sidebar {
-    margin-top: 10px;
+  .posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
   }
 }

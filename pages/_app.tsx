@@ -29,7 +29,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <div className='app'>
-        <main>
+        <main className='h-100'>
           <ThemeProvider theme={theme}>
             <Layout Component={Component} pageProps={pageProps} />
           </ThemeProvider>

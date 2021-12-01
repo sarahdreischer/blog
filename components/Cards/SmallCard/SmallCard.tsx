@@ -1,27 +1,33 @@
-import Image from 'next/image';
+import React from 'react';
 import cn from 'classnames';
+import Image from 'next/image';
+import styles from './SmallCard.module.scss';
 import { Post } from '@types';
 import Link from 'next/link';
-import styles from './LargeCard.module.scss';
 import moment from 'moment';
 
-interface LargeCardProps {
+interface SmallCardProps {
   post: Post;
+  className?: string;
 }
 
-export function LargeCard({ post }: LargeCardProps) {
+export function SmallCard({ post, className }: SmallCardProps) {
   const { datePublished, headerImage, id, readDurationMin, summary, title } = post;
   const relativePublishedDate = moment(datePublished).fromNow();
 
   return (
-    <div className={cn('d-flex p-2', styles.container)}>
-      <div className={cn('position-relative', styles.image)}>
+    <div className={cn('h-100 p-2', styles.container, className)}>
+      <div className='position-relative'>
         <Image src={headerImage} alt='Test' objectFit='cover' layout='fill' priority />
       </div>
-      <div className={cn('d-flex flex-column pl-3', styles.text)}>
-        <div className='small text-black-50 mb-1'>{relativePublishedDate}</div>
-        <div className='h5 font-weight-bold'>{title}</div>
-        <p className={cn('text-black-50 overflow-hidden flex-grow-1', styles.summary)}>{summary}</p>
+      <div className='d-flex flex-column'>
+        <div className={cn('small text-black-50 mb-1', styles.publishDate)}>
+          {relativePublishedDate}
+        </div>
+        <div className='h6 font-weight-bold'>{title}</div>
+        <p className={cn('small text-black-50 overflow-hidden flex-grow-1', styles.summary)}>
+          {summary}
+        </p>
         <div className='d-flex justify-content-between'>
           <div className='small text-black-50'>{readDurationMin || 3} Min Read</div>
           <Link as={`/blog/${id}`} href={'/blog/[id]'}>

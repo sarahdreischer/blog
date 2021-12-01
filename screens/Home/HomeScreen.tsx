@@ -1,9 +1,5 @@
-import { Body, CustomPagination, LargeCard, PostSummaries } from '@components';
-import { Divider } from '@mui/material';
+import { LargeCard, SmallCard } from '@components';
 import { Post } from '@types';
-import Image from 'next/image';
-import React from 'react';
-import { Container, Row } from 'react-bootstrap';
 import cn from 'classnames';
 import styles from './HomeScreen.module.scss';
 
@@ -13,21 +9,20 @@ interface HomeScreenProps {
   numberOfPages: number;
 }
 
-export const HomeScreen = ({
-  posts,
-  activePage,
-  numberOfPages: maxNumberOfPages,
-}: HomeScreenProps) => {
+export const HomeScreen = ({ posts, activePage, numberOfPages }: HomeScreenProps) => {
+  const topPosts = posts.filter((_, i) => i < 3);
+  const latestPost = posts[0];
+
   return (
-    <>
-      <div className={cn('d-flex', styles.featuredContainer)}>
-        <LargeCard post={posts[0]} />
+    <div className={cn('h-100', styles.container)}>
+      <div className='d-flex'>
+        <LargeCard post={latestPost} />
       </div>
-      <Divider />
-      <PostSummaries posts={posts} />
-      <Row className='float-right mr-1'>
-        <CustomPagination activePage={activePage} maxNumber={maxNumberOfPages} visibleRange={5} />
-      </Row>
-    </>
+      <div className={styles.posts}>
+        {topPosts.map((post) => (
+          <SmallCard className='h-100' post={post} key={post.title} />
+        ))}
+      </div>
+    </div>
   );
 };

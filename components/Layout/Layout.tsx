@@ -1,9 +1,10 @@
 import { NextComponentType, NextPageContext } from 'next';
 import { Footer } from './components/Footer/Footer';
-import { Page } from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
 import { Container } from 'react-bootstrap';
 import { Divider } from '@mui/material';
+import cn from 'classnames';
+import styles from './Layout.module.scss';
 
 interface DefaultLayoutProps {
   Component: NextComponentType<NextPageContext, any, {}>;
@@ -12,15 +13,17 @@ interface DefaultLayoutProps {
 
 export const Layout = ({ Component, pageProps }: DefaultLayoutProps) => {
   return (
-    <>
-      <Container className='px-0'>
-        <div className='mb-3'>
-          <Header />
+    <div>
+      <Container className={cn('px-0', styles.container)}>
+        <Header />
+        <div className='py-2'>
           <Component {...pageProps} />
         </div>
-        <Divider />
-        <Footer />
+        <div>
+          <Divider />
+          <Footer />
+        </div>
       </Container>
-    </>
+    </div>
   );
 };

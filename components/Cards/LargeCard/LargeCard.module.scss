@@ -4,7 +4,15 @@
   box-sizing: border-box;
   border-radius: 5px;
 
-  .summary {
-    max-height: 70%;
+  .image {
+    width: 40%;
+  }
+
+  .text {
+    width: 60%;
+
+    .summary {
+      line-height: 1.5rem;
+    }
   }
 }

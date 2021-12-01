@@ -12,4 +12,5 @@ export interface Post {
   dateModified: Date;
   keywords: string[];
   summary: string[];
+  readDurationMin?: number;
 }
