@@ -6,7 +6,7 @@ import { ROOT_LINK } from 'lib/seo/meta-tags';
 import { jsonLdScriptProps } from 'react-schemaorg';
 import { BlogPosting } from 'schema-dts';
 import { serialize } from 'next-mdx-remote/serialize';
-import { StylingComponents, markdownComponents } from '@components';
+import { StylingComponents } from '@components';
 import { BlogPostScreen } from '@screens';
 import moment from 'moment';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';

@@ -14,7 +14,7 @@ interface DefaultLayoutProps {
 export const Layout = ({ Component, pageProps }: DefaultLayoutProps) => {
   return (
     <div>
-      <Container className={cn('px-0', styles.container)}>
+      <Container className={cn('px-0 py-1', styles.container)}>
         <Header />
         <div className='py-2'>
           <Component {...pageProps} />
